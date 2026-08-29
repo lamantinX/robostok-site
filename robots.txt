@@ -1,0 +1,29 @@
+# Robots.txt for robostok.ru
+# Allowing AI Search Bots for Generative Engine Optimization (GEO)
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# AI Search & Answer Crawlers (Explicitly Allowed for GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Training Bulk Crawlers
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://robostok.ru/sitemap.xml

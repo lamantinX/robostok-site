@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>РОБОСТОК · Презентация для клиентов (Автономное питание)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="presentation.css">
+  <style>
+    .slide-split-photo {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      height: calc(100% - 70px);
+    }
+    .photo-frame {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(32, 49, 58, 0.06);
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-frame.contain img {
+      object-fit: contain;
+      background: #F0F4F4;
+    }
+  </style>
+</head>
+<body>
+
+<div class="deck-wrapper">
+  <!-- Top Progress Bar -->
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Header Bar -->
+  <header class="slide-header">
+    <div class="brand-indicator">
+      <span class="brand-logo-text">РОБОСТОК</span>
+      <span class="brand-category-badge">Автономная энергия</span>
+    </div>
+    <div class="slide-actions">
+      <button class="btn-icon" id="btnJump" title="Сетка слайдов (G)">
+        <span>☰</span> Слайды
+      </button>
+      <button class="btn-icon" id="btnFullscreen" title="На весь экран (F)">
+        <span>⛶</span> Экран
+      </button>
+    </div>
+  </header>
+
+  <!-- Slides Canvas -->
+  <main class="slides-canvas">
+
+    <!-- ==========================================
+         SLIDE 1: ТИТУЛЬНЫЙ (С ФОТО)
+    =========================================== -->
+    <section class="slide active" data-slide="1">
+      <div class="slide-hero">
+        <div class="hero-title-group">
+          <h1>РОБОСТОК</h1>
+          <div class="hero-subtitle">ЭНЕРГЕТИЧЕСКАЯ БЕЗОПАСНОСТЬ БИЗНЕСА И ДОМА</div>
+          <p class="hero-desc">Бесперебойное электропитание, гибридные инверторные системы и портативные зарядные станции под ключ.</p>
+          <div class="hero-features">
+            <div><span class="check-icon">✔</span> <strong>0 дБ шума</strong> — без гари, выхлопа и запаха бензина в помещении</div>
+            <div><span class="check-icon">✔</span> <strong>0–10 мс переключение</strong> — кассы, серверы и котлы не перезагружаются</div>
+            <div><span class="check-icon">✔</span> <strong>LiFePO4 батареи</strong> — 6000+ циклов (10–15 лет стабильной службы)</div>
+            <div><span class="check-icon">✔</span> <strong>«Под ключ»</strong> — аудит нагрузок, монтаж в щит, договор и гарантия</div>
+          </div>
+        </div>
+
+        <div class="photo-frame contain" style="height: 100%; border: 2px solid var(--soft-teal); border-radius: 16px;">
+          <img src="assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png" alt="Робосток Народный резерв">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 2: ПРОБЛЕМА И ЦЕНА БЛЭКАУТА (С ФОТО)
+    =========================================== -->
+    <section class="slide" data-slide="2">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Сколько стоит бизнесу и дому 1 час без света?</h2>
+        <p class="slide-subtitle">Отключение электроэнергии — это не временное неудобство, а прямые финансовые убытки и угроза безопасности</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="card" style="padding: 16px;">
+            <span class="card-badge badge-red">СПИСАНИЕ ТОВАРА</span>
+            <h3 class="card-heading" style="font-size: 16px; margin-bottom: 4px;">Аптечные вакцины и заморозка</h3>
+            <p class="card-text">Порча термолабильных препаратов в аптеках, разморозка морозильных витрин в магазинах. Убытки от 100 000 ₽ за 4 часа.</p>
+          </div>
+
+          <div class="card" style="padding: 16px;">
+            <span class="card-badge badge-red">ПАРАЛИЧ ПРОДАЖ</span>
+            <h3 class="card-heading" style="font-size: 16px; margin-bottom: 4px;">Кассовые узлы и терминалы</h3>
+            <p class="card-text">Остановка эквайринга, сканеров и 1С. Клиенты уходят к конкурентам. Срыв дневной выручки торговой точки.</p>
+          </div>
+
+          <div class="card" style="padding: 16px;">
+            <span class="card-badge badge-peach">РИСК АВАРИИ</span>
+            <h3 class="card-heading" style="font-size: 16px; margin-bottom: 4px;">Отопление, котлы и серверы</h3>
+            <p class="card-text">Остановка циркуляционных насосов зимой приводит к замерзанию труб, а сбой серверов — к потере баз данных.</p>
+          </div>
+        </div>
+
+        <div class="photo-frame">
+          <img src="assets/photo_store_pharmacy_backup.png" alt="Работающий магазин при отключении света">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 3: ГЕНЕРАТОР ПРОТИВ СИСТЕМЫ РОБОСТОК (С ГРАФИКОЙ)
+    =========================================== -->
+    <section class="slide" data-slide="3">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Почему LiFePO4-системы вытесняют генераторы?</h2>
+        <p class="slide-subtitle">Честное сравнение классических генераторов и современных инверторных аккумуляторов «Робосток»</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div class="photo-frame contain">
+          <img src="assets/robostok_tco_modular_vs_generator_tco_comparison.png" alt="Сравнение затрат TCO генератор vs Робосток">
+        </div>
+
+        <div class="card card-teal-border" style="justify-content: center;">
+          <span class="card-badge badge-teal">✔ ПРЕИМУЩЕСТВА СИСТЕМ «РОБОСТОК»</span>
+          <ul class="check-list">
+            <li><span class="check-icon">✔</span> <strong>Абсолютная тишина (0 дБ)</strong> — стоит прямо в офисе, зале или спальне</li>
+            <li><span class="check-icon">✔</span> <strong>Экологично и безопасно</strong> — нет запаха бензина, гари и дыма</li>
+            <li><span class="check-icon">✔</span> <strong>Мгновенный авто-ввод (0–10 мс)</strong> — техника не перезагружается</li>
+            <li><span class="check-icon">✔</span> <strong>Чистый синус 220V</strong> — безопасен для чувствительных котлов и ПК</li>
+            <li><span class="check-icon">✔</span> <strong>0 ₽ на обслуживание</strong> — срок службы ячеек 6000+ циклов (15 лет)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 4: ЛИНЕЙКА 1: ПОРТАТИВНЫЕ СТАНЦИИ (С ФОТО)
+    =========================================== -->
+    <section class="slide" data-slide="4">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Линейка 1: Портативные зарядные электростанции</h2>
+        <p class="slide-subtitle">FOSSiBOT и Pecron — мобильный резерв, готовый к работе сразу «из коробки» без монтажа</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div class="photo-frame">
+          <img src="assets/photo_fossibot_station.png" alt="Зарядная станция FOSSiBOT">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; justify-content: space-between;">
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-sky">FOSSiBOT F1200 · 1.2 кВт / 1 кВт·ч</span>
+            <p class="card-text"><strong>Для квартир и касс:</strong> Зарядка за 70 мин. Роутеры, ноутбуки, свет, мини-холодильники.</p>
+          </div>
+
+          <div class="card card-teal-border" style="padding: 14px;">
+            <span class="card-badge badge-teal">FOSSiBOT F2400 · 2.4 кВт / 2 кВт·ч (ХИТ)</span>
+            <p class="card-text"><strong>Для аптек и витрин:</strong> ИБП 8 мс, колёса и ручка. Тянет микроволновку, витрину, инструмент.</p>
+          </div>
+
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-peach">PECRON E3800 / F5000 · 3.8–5.0 кВт·ч</span>
+            <p class="card-text"><strong>Для клиник и кафе:</strong> Модульное расширение батареями. Тянет насосы, кофемашины, станки.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 5: ЛИНЕЙКА 2: «НАРОДНЫЙ РЕЗЕРВ» (С ФОТО МОНТАЖА)
+    =========================================== -->
+    <section class="slide" data-slide="5">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Линейка 2: Стационарный «Народный резерв» 6.2 кВт</h2>
+        <p class="slide-subtitle">Хит продаж: Гибридный инвертор Sunways 6.2 кВт + LiFePO4 батарея 5.12 кВт·ч с монтажом в электрощит</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div class="card card-teal-border">
+          <span class="card-badge badge-teal">ПАРАМЕТРЫ СИСТЕМЫ</span>
+          <div class="metric-line">
+            <span>Мощность инвертора:</span>
+            <span class="metric-highlight">6.2 кВт (пик 12 кВт)</span>
+          </div>
+          <div class="metric-line">
+            <span>Запас энергии АКБ:</span>
+            <span class="metric-highlight">5.12 кВт·ч (100Ah)</span>
+          </div>
+          <ul class="check-list" style="margin-top: 10px;">
+            <li><span class="check-icon">✔</span> <strong>Скорость АВР 0–10 мс</strong> — техника работает без сбоя</li>
+            <li><span class="check-icon">✔</span> <strong>Чистый синус 220–230V</strong> — защита автоматики котлов</li>
+            <li><span class="check-icon">✔</span> <strong>6000+ циклов ячеек</strong> — более 15 лет непрерывной службы</li>
+            <li><span class="check-icon">✔</span> <strong>Монтаж под ключ</strong> сертифицированными электриками</li>
+          </ul>
+        </div>
+
+        <div class="photo-frame">
+          <img src="assets/08_real_installation_utility_room_narodny_rezerv_6_2kw.png" alt="Реальный монтаж инвертора в щитовой">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 6: ЛИНЕЙКА 3: ПРЕМИУМ И СОЛНЕЧНЫЕ СТАНЦИИ (С ФОТО)
+    =========================================== -->
+    <section class="slide" data-slide="6">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Линейка 3: Премиум-комплексы Deye и Солнечные станции</h2>
+        <p class="slide-subtitle">Масштабируемые системы от 6 до 50 кВт с запасом энергии до 100 кВт·ч для больших объектов</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div class="photo-frame">
+          <img src="assets/photo_deye_hybrid_cabinet.png" alt="Премиальный шкаф Deye с аккумуляторами">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; justify-content: space-between;">
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-teal">Deye 6–8 кВт Hybrid (АКБ 10–15 кВт·ч)</span>
+            <p class="card-text">Коттеджи, пекарни, супермаркеты. Сенсорный дисплей, работа с генератором по сухому контакту, Wi-Fi.</p>
+          </div>
+
+          <div class="card card-teal-border" style="padding: 14px;">
+            <span class="card-badge badge-sky">Deye 12 кВт 3-фазный (АКБ 15–30 кВт·ч)</span>
+            <p class="card-text">Клиники, склады, производства. Полноценные 3 фазы 380V с асимметричной балансировкой.</p>
+          </div>
+
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-peach">Солнечные станции СЭС (панели 550–650 Вт)</span>
+            <p class="card-text">Снижение счетов за свет до 80%. Полная автономность и зарядка от солнца при долгих блэкаутах.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 7: ТАБЛИЦА ВРЕМЕНИ АВТОНОМИИ (С ГРАФИКОЙ)
+    =========================================== -->
+    <section class="slide" data-slide="7">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Сколько держит оборудование на одном заряде?</h2>
+        <p class="slide-subtitle">Реальное расчетное время работы типовых приборов от батарей «Робосток»</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div class="photo-frame contain">
+          <img src="assets/03_what_it_powers_blackout_narodny_rezerv_6_2kw.png" alt="Что питает станция Робосток">
+        </div>
+
+        <div class="table-wrapper">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Оборудование</th>
+                <th>Мощность</th>
+                <th>Резерв (5.1 кВт·ч)</th>
+                <th>Deye (15 кВт·ч)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Аптечный холод-к / витрина</strong></td>
+                <td class="mono">150–250 Вт</td>
+                <td class="mono">20–25 часов</td>
+                <td class="mono">60+ часов</td>
+              </tr>
+              <tr>
+                <td><strong>Газовый котел + насос</strong></td>
+                <td class="mono">120–180 Вт</td>
+                <td class="mono">24–30 часов</td>
+                <td class="mono">70+ часов</td>
+              </tr>
+              <tr>
+                <td><strong>Касса + ПК + роутер</strong></td>
+                <td class="mono">80–120 Вт</td>
+                <td class="mono">40–45 часов</td>
+                <td class="mono">120+ часов</td>
+              </tr>
+              <tr>
+                <td><strong>LED-освещение (20 ламп)</strong></td>
+                <td class="mono">200 Вт</td>
+                <td class="mono">22–24 часа</td>
+                <td class="mono">65+ часов</td>
+              </tr>
+              <tr>
+                <td><strong>Сервер + видеонаблюдение</strong></td>
+                <td class="mono">350–500 Вт</td>
+                <td class="mono">10–12 часов</td>
+                <td class="mono">30–35 часов</td>
+              </tr>
+              <tr>
+                <td><strong>Дом целиком (свет, ТВ, насос)</strong></td>
+                <td class="mono">400–700 Вт</td>
+                <td class="mono">8–10 часов</td>
+                <td class="mono">24–30 часов</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 8: ИНЖЕНЕРНЫЙ КАЛЬКУЛЯТОР НАГРУЗОК
+    =========================================== -->
+    <section class="slide" data-slide="8">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Интерактивный расчет автономии для клиента</h2>
+        <p class="slide-subtitle">Выберите приборы объекта — калькулятор моментально покажет суммарную мощность и время автономной работы</p>
+      </div>
+
+      <div class="calc-widget">
+        <div class="calc-inputs">
+          <div class="calc-checkbox-item checked" data-watts="180">
+            <div class="calc-item-info">
+              <span class="calc-item-name">Холодильник / витрина</span>
+              <span class="calc-item-watts">180 Вт</span>
+            </div>
+            <span class="check-status" style="font-weight:bold; color:var(--teal-primary);">✔</span>
+          </div>
+
+          <div class="calc-checkbox-item checked" data-watts="120">
+            <div class="calc-item-info">
+              <span class="calc-item-name">Касса + ПК + терминал</span>
+              <span class="calc-item-watts">120 Вт</span>
+            </div>
+            <span class="check-status" style="font-weight:bold; color:var(--teal-primary);">✔</span>
+          </div>
+
+          <div class="calc-checkbox-item checked" data-watts="150">
+            <div class="calc-item-info">
+              <span class="calc-item-name">Котёл + насос отопления</span>
+              <span class="calc-item-watts">150 Вт</span>
+            </div>
+            <span class="check-status" style="font-weight:bold; color:var(--teal-primary);">✔</span>
+          </div>
+
+          <div class="calc-checkbox-item checked" data-watts="50">
+            <div class="calc-item-info">
+              <span class="calc-item-name">Wi-Fi роутер + камеры</span>
+              <span class="calc-item-watts">50 Вт</span>
+            </div>
+            <span class="check-status" style="font-weight:bold; color:var(--teal-primary);">✔</span>
+          </div>
+
+          <div class="calc-checkbox-item" data-watts="200">
+            <div class="calc-item-info">
+              <span class="calc-item-name">Освещение (LED)</span>
+              <span class="calc-item-watts">200 Вт</span>
+            </div>
+            <span class="check-status" style="font-weight:bold; color:var(--teal-primary);">+</span>
+          </div>
+
+          <div class="calc-checkbox-item" data-watts="350">
+            <div class="calc-item-info">
+              <span class="calc-item-name">Серверная база данных</span>
+              <span class="calc-item-watts">350 Вт</span>
+            </div>
+            <span class="check-status" style="font-weight:bold; color:var(--teal-primary);">+</span>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-summary-power">
+            <div>
+              <div style="font-size: 11px; color: var(--soft-teal); text-transform: uppercase;">Суммарная нагрузка:</div>
+              <div id="calcTotalWatts" style="font-family: var(--font-mono); font-size: 26px; font-weight: 800; color: #FFFFFF;">500 Вт</div>
+            </div>
+            <div style="font-size: 11px; color: #CBDCF3; text-align: right;">
+              Точный расчет пусковых<br>токов сделает инженер
+            </div>
+          </div>
+
+          <div class="calc-res-grid">
+            <div class="calc-res-box">
+              <div class="calc-res-label">FOSSiBOT F1200 (1 кВт·ч)</div>
+              <div class="calc-res-val" id="resF1200">1.7 ч</div>
+            </div>
+            <div class="calc-res-box">
+              <div class="calc-res-label">FOSSiBOT F2400 (2 кВт·ч)</div>
+              <div class="calc-res-val" id="resF2400">3.5 ч</div>
+            </div>
+            <div class="calc-res-box">
+              <div class="calc-res-label">«Народный резерв» (5.1 кВт·ч)</div>
+              <div class="calc-res-val" id="resRezerv">9.2 ч</div>
+            </div>
+            <div class="calc-res-box">
+              <div class="calc-res-label">Deye Премиум (15.3 кВт·ч)</div>
+              <div class="calc-res-val" id="resDeye">28 ч</div>
+            </div>
+          </div>
+
+          <div style="font-size: 11px; color: var(--soft-teal); text-align: center;">
+            💡 Подбор системы осуществляется с 20% запасом по мощности
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 9: СХЕМА РАБОТЫ И ДОГОВОР (С ФОТО)
+    =========================================== -->
+    <section class="slide" data-slide="9">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Прозрачные условия: 100% защита сделки</h2>
+        <p class="slide-subtitle">Юридическая чистота, официальный договор и оплата за проверенный результат</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div style="display: flex; flex-direction: column; gap: 10px; justify-content: space-between;">
+          <div class="card" style="padding: 12px;">
+            <span class="card-badge badge-teal">ШАГ 01 · ЗАМЕР</span>
+            <p class="card-text">Бесплатный выезд инженера. Замер токов и аудит щитка.</p>
+          </div>
+          <div class="card" style="padding: 12px;">
+            <span class="card-badge badge-teal">ШАГ 02 · ДОГОВОР</span>
+            <p class="card-text">Официальный договор с ИП (безнал / нал) с фиксацией сметы.</p>
+          </div>
+          <div class="card" style="padding: 12px;">
+            <span class="card-badge badge-peach">ШАГ 03 · АВАНС 50%</span>
+            <p class="card-text">Предоплата 50% после подписания. Заказ оборудования.</p>
+          </div>
+          <div class="card" style="padding: 12px;">
+            <span class="card-badge badge-sky">ШАГ 04 · МОНТАЖ В ЩИТ</span>
+            <p class="card-text">Установка автоматики АВР сертифицированными электриками.</p>
+          </div>
+          <div class="card card-teal-border" style="padding: 12px;">
+            <span class="card-badge badge-teal">ШАГ 05 · СДАЧА И 50%</span>
+            <p class="card-text">Тест под нагрузкой, гарантийный талон и окончательный расчет.</p>
+          </div>
+        </div>
+
+        <div class="photo-frame">
+          <img src="assets/09_real_bos_electrical_panel_narodny_rezerv_6_2kw.png" alt="Смонтированный электрощит с АВР">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 10: ОБЪЕКТЫ И КЕЙСЫ (С ФОТО)
+    =========================================== -->
+    <section class="slide" data-slide="10">
+      <div class="slide-title-block">
+        <h2 class="slide-title">Где уже работают решения «Робосток»</h2>
+        <p class="slide-subtitle">Решения адаптированы под требования коммерческих нормативов и жилых объектов</p>
+      </div>
+
+      <div class="slide-split-photo">
+        <div style="display: flex; flex-direction: column; gap: 12px; justify-content: space-between;">
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-teal">МЕДИЦИНА И АПТЕКИ</span>
+            <p class="card-text">Хранение термолабильных вакцин, работа холодильников, серверов и касс.</p>
+          </div>
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-peach">РИТЕЙЛ И ОБЩЕПИТ</span>
+            <p class="card-text">Холодильные витрины, морозильные лари, кофемашины, кассы, эквайринг.</p>
+          </div>
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-sky">ЖИЛОЙ СЕКТОР</span>
+            <p class="card-text">Отопительные котлы, насосы водоснабжения, освещение, Wi-Fi и видеонаблюдение.</p>
+          </div>
+          <div class="card" style="padding: 14px;">
+            <span class="card-badge badge-teal">КОММЕРЦИЯ И СКЛАДЫ</span>
+            <p class="card-text">Базы данных 1С, рабочие места сотрудников, IP-телефония и связь.</p>
+          </div>
+        </div>
+
+        <div class="photo-frame">
+          <img src="assets/08_real_installation_utility_room_narodny_rezerv_6_2kw.png" alt="Монтаж оборудования в технической комнате">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SLIDE 11: ФИНАЛ И ПРИЗЫВ К ДЕЙСТВИЮ (С ФОТО)
+    =========================================== -->
+    <section class="slide" data-slide="11">
+      <div class="slide-split-photo" style="height: 100%;">
+        <div class="photo-frame contain">
+          <img src="assets/07_trust_contract_delivery_narodny_rezerv_6_2kw.png" alt="Официальный договор и гарантия">
+        </div>
+
+        <div style="background: var(--white); border: 2px solid var(--teal-primary); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="card-badge badge-teal">ШАГ К ЭНЕРГОНЕЗАВИСИМОСТИ</span>
+            <h2 style="font-size: 24px; font-weight: 800; color: var(--text-dark); margin: 8px 0;">ЗАЩИТИТЕ ВАШ БИЗНЕС И ДОМ</h2>
+            <p style="font-size: 14px; color: var(--teal-primary); font-weight: 700; margin-bottom: 14px;">Закажите бесплатный выезд инженера и аудит щитка сегодня</p>
+            
+            <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: 10px; padding: 14px; margin-bottom: 14px;">
+              <strong style="color: var(--text-dark); font-size: 12.5px; display: block; margin-bottom: 6px;">Что сделает инженер на объекте:</strong>
+              <p style="font-size: 12px; color: var(--muted-text); line-height: 1.5;">
+                1. Замерит реальные пусковые токи вашего оборудования<br>
+                2. Проверит состояние проводки и щитка<br>
+                3. Подберет систему под ваш бюджет без переплат<br>
+                4. Составит точную смету с гарантией
+              </p>
+            </div>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 12.5px; font-weight: 700; color: var(--text-dark);">
+            Бренд «Робосток» | Контакты агента:<br>
+            <span style="color: var(--teal-primary);">Телефон / Telegram уточняйте у представителя</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="deck-footer">
+    <div class="footer-info">
+      «Робосток» — автономное электропитание и зарядные станции под ключ
+    </div>
+    <div class="footer-nav">
+      <button class="nav-btn" id="btnPrev" title="Предыдущий слайд (←)">‹</button>
+      <span class="slide-counter" id="slideCounter">01 / 11</span>
+      <button class="nav-btn" id="btnNext" title="Следующий слайд (→ / Пробел)">›</button>
+    </div>
+  </footer>
+
+  <!-- Slide Jump Modal -->
+  <div class="modal-grid" id="modalGrid">
+    <div class="modal-header">
+      <div class="modal-title">Навигация по слайдам презентации</div>
+      <button class="modal-close" id="btnCloseModal">✕</button>
+    </div>
+    <div class="jump-grid" id="jumpGridContainer"></div>
+  </div>
+</div>
+
+<script src="presentation.js"></script>
+</body>
+</html>

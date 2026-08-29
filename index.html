@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html class="dark" lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>РОБОСТОК · Автономное электропитание, гибридные инверторы и зарядные станции под ключ</title>
+  
+  <!-- SEO & AI Search Metadata -->
+  <meta name="description" content="РОБОСТОК — надежное бесперебойное электропитание для бизнеса и загородных домов. 0 дБ шума, 0 л бензина, автоматический ввод резерва 0–10 мс на LiFePO4 аккумуляторах (6000+ циклов). Монтаж в щит, официальный договор с ИП, гарантия до 3 лет."/>
+  <meta name="keywords" content="РОБОСТОК, автономное питание, гибридный инвертор, LiFePO4 аккумуляторы, ИБП для дома, ИБП для котла, зарядные станции, Pecron E3800, PECRON F5000, F2400, Deye, солнечные панели, резервное питание Донецк, Ростов, Москва"/>
+  <meta name="author" content="РОБОСТОК"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  
+  <!-- GEO Meta Tags -->
+  <meta name="geo.region" content="RU-DON, RU-ROS, RU-MOW"/>
+  <meta name="geo.placename" content="Донецк, Ростов-на-Дону, Москва"/>
+  <meta name="geo.position" content="48.015883;37.802850"/>
+  <meta name="ICBM" content="48.015883, 37.802850"/>
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:site_name" content="РОБОСТОК"/>
+  <meta property="og:title" content="РОБОСТОК · Энергетическая безопасность бизнеса и дома без шума и бензина"/>
+  <meta property="og:description" content="Бесперебойное питание LiFePO4 под ключ: инверторы Sunways и Deye, станции Pecron и FOSSiBOT. ИБП 0–10 мс, договор, оплата 50/50 по акту."/>
+  <meta property="og:url" content="https://robostok.ru/"/>
+  <meta property="og:image" content="https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png"/>
+
+  <!-- JSON-LD Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://robostok.ru/#organization",
+        "name": "РОБОСТОК",
+        "alternateName": "РОБОСТОК Энергия и Автоматика",
+        "url": "https://robostok.ru",
+        "logo": "https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png",
+        "description": "Федеральный интегратор и лидер рынка автономного электропитания, гибридных инверторных систем и портативных LiFePO4 станций.",
+        "telephone": "+7-985-674-75-74",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "RU",
+          "addressLocality": "Донецк",
+          "streetAddress": "ул. Артема, д. 1"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Дмитрий Орлов"
+        }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://robostok.ru/#product-rezerv-6kw",
+        "name": "Комплекс бесперебойного питания «Народный резерв» 6.2 кВт",
+        "image": "https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png",
+        "description": "Стационарный комплекс: гибридный инвертор Sunways 6.2 кВт (пик 12 кВт) + LiFePO4 АКБ 5.12 кВт·ч (100Ah 48V) с автоматикой АВР 0–10 мс под ключ.",
+        "brand": {
+          "@type": "Brand",
+          "name": "РОБОСТОК"
+        },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "RUB",
+          "price": "349000",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@id": "https://robostok.ru/#organization"
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://robostok.ru/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Почему система РОБОСТОК лучше классического бензогенератора?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Системы РОБОСТОК работают абсолютно бесшумно (0 дБ) и не выделяют угарного газа, поэтому разрешены для установки внутри помещений. Переключение происходит мгновенно (0–10 мс) без провала питания и сброса касс/серверов, а необслуживаемые ячейки LiFePO4 служат более 15 лет (6000+ циклов)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как происходит оплата и монтаж под ключ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Мы заключаем официальный договор с ИП. Предоплата составляет 50% после подписания. Сертифицированные электрики выполняют монтаж АВР в щит, а вторые 50% вы оплачиваете только после тестирования системы под нагрузкой и подписания акта сдачи-приемки."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-surface); }
+    ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2F6F68; }
+
+    /* CSS Variable Theming for Light / Dark */
+    :root {
+      --bg-main: #F7F6F2;
+      --bg-surface: #FFFFFF;
+      --bg-elevated: #EEF2F1;
+      --text-main: #20313A;
+      --text-muted: #5C6C75;
+      --border-color: #DDE5E2;
+      --accent: #2F6F68;
+      --accent-soft: #A9DCD3;
+      --accent-dark: #285C57;
+      --peach: #8F5641;
+      --peach-bg: #F7D2B9;
+      --sky: #1F456E;
+    }
+
+    html.dark {
+      --bg-main: #0B1114;
+      --bg-surface: #17272C;
+      --bg-elevated: #111C20;
+      --text-main: #F4FBF8;
+      --text-muted: #8C9EA6;
+      --border-color: #294047;
+      --accent: #2F6F68;
+      --accent-soft: #A9DCD3;
+      --accent-dark: #285C57;
+      --peach: #F7D2B9;
+      --peach-bg: rgba(247, 210, 185, 0.15);
+      --sky: #CBDCF3;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .control-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .pulse-status {
+      animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.9); opacity: 0.6; }
+      50% { transform: scale(1.15); opacity: 0.9; }
+      100% { transform: scale(0.9); opacity: 0.6; }
+    }
+
+    .log-slide {
+      animation: slideUpFade 4s ease-in-out infinite;
+    }
+
+    @keyframes slideUpFade {
+      0% { opacity: 0; transform: translateY(8px); }
+      10% { opacity: 1; transform: translateY(0); }
+      90% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-8px); }
+    }
+  </style>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "night": "#0B1114",
+            "night-panel": "#17272C",
+            "night-elevated": "#111C20",
+            "night-line": "#294047",
+            "primary": "#2F6F68",
+            "primary-container": "#2F6F68",
+            "primary-dark": "#285C57",
+            "primary-soft": "#A9DCD3",
+            "signal-soft": "#B9E8DF",
+            "ink": "#20313A",
+            "muted": "#8C9EA6",
+            "peach": "#F7D2B9",
+            "sky": "#CBDCF3",
+            "on-dark": "#F4FBF8",
+            "border": "#294047",
+            "success": "#347A61",
+            "error": "#9A4343"
+          },
+          fontFamily: {
+            "body-md": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"],
+            "data": ["JetBrains Mono", "monospace"],
+            "display": ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="font-body-md relative overflow-x-hidden">
+
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full bg-[var(--bg-main)]/95 border-b border-[var(--border-color)] z-50 transition-all duration-150 backdrop-blur-md">
+  <div class="flex justify-between items-center px-4 sm:px-8 lg:px-12 py-3.5 max-w-screen-xl mx-auto">
+    <!-- Brand Logo strictly in Russian -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="w-8 h-8 rounded bg-[var(--bg-elevated)] border border-[var(--border-color)] flex items-center justify-center text-[var(--accent)]">
+        <span class="material-symbols-outlined text-[18px]">bolt</span>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-extrabold text-lg text-[var(--text-main)] tracking-wider font-display">РОБОСТОК</span>
+        <span class="font-data text-[9px] text-[var(--text-muted)] tracking-tight uppercase">Автономное питание</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <div class="hidden lg:flex gap-6 items-center text-xs font-semibold">
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#comparison">Сравнение</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#season-offers">Лето / Зима офферы</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#catalog">Каталог</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#calculator">Калькулятор</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#workflow">Схема работы</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#faq">FAQ</a>
+    </div>
+
+    <!-- Phone, Call Button & Theme Toggle -->
+    <div class="flex items-center gap-3">
+      <!-- Visible Phone & Direct Call with data-config -->
+      <a href="tel:+79856747574" data-config="phoneTel" class="flex items-center gap-1.5 text-xs font-bold text-[var(--accent)] hover:underline font-data">
+        <span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
+        <span class="hidden sm:inline" data-config="phoneDisplay">+7 985 674 75 74</span>
+      </a>
+
+      <!-- Direct Call Button -->
+      <a href="tel:+79856747574" data-config="phoneTel" class="bg-primary text-white font-label text-xs uppercase tracking-wider px-3.5 py-1.5 rounded hover:bg-primary-dark transition-colors border border-primary-dark flex items-center gap-1">
+        <span>Позвонить</span>
+      </a>
+
+      <!-- Theme Switcher Button -->
+      <button id="themeToggle" class="p-1.5 rounded border border-[var(--border-color)] bg-[var(--bg-elevated)] text-[var(--text-main)] hover:border-[var(--accent)] transition-colors" title="Сменить тему оформления">
+        <span class="material-symbols-outlined text-[16px] block" id="themeIcon">light_mode</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Canvas -->
+<main class="relative z-10 pt-[68px]">
+
+  <!-- Screen 1: Hero Section -->
+  <section class="min-h-[720px] flex flex-col justify-center items-center px-4 lg:px-8 max-w-screen-xl mx-auto relative pt-10 pb-14">
+    
+    <!-- Tagline Chip -->
+    <div class="control-card px-3.5 py-1.5 rounded inline-flex items-center gap-2 mb-6">
+      <span class="w-2 h-2 rounded-full bg-[var(--accent)] pulse-status"></span>
+      <span class="font-data text-[11px] text-[var(--accent)] uppercase tracking-wider">Бесперебойное энергоснабжение объектов</span>
+    </div>
+
+    <!-- Headlines -->
+    <div class="text-center max-w-4xl mb-7">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[var(--text-main)] mb-4 leading-tight font-display">
+        Защитите бизнес и дом от блэкаутов. Без шума и бензина.
+      </h1>
+      <p class="text-base sm:text-xl text-[var(--accent)] mb-3 font-semibold">
+        Гибридные инверторы, станции Pecron/FOSSiBOT и СЭС под ключ. Ввод 0–10 мс.
+      </p>
+      <p class="text-xs sm:text-sm text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed">
+        Сохраняем продукты и вакцины в аптеках, защищаем отопление в домах от разморозки труб, кассы и сервера при любых авариях в сети.
+      </p>
+    </div>
+
+    <!-- Phone & Actions -->
+    <div class="flex flex-wrap gap-3.5 justify-center items-center mb-8">
+      <a href="tel:+79856747574" data-config="phoneButtonHero" class="bg-primary text-white font-label text-xs uppercase tracking-wider px-6 py-3.5 rounded hover:bg-primary-dark transition-colors flex items-center gap-2 shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">call</span> Позвонить: +7 985 674 75 74
+      </a>
+      <a href="#calculator" class="control-card text-[var(--text-main)] font-label text-xs uppercase tracking-wider px-6 py-3.5 rounded hover:border-[var(--accent)] transition-colors flex items-center gap-2">
+        <span class="material-symbols-outlined text-[18px]">calculate</span> Рассчитать автономию
+      </a>
+    </div>
+
+    <!-- Real-time Control Log Bar -->
+    <div class="control-card w-full max-w-3xl rounded p-2.5 overflow-hidden h-12 relative flex items-center shadow-sm">
+      <div class="flex items-center gap-3 font-data text-xs w-full px-3" id="log-container">
+        <!-- Live status logs injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 2: Seasonal Offers (Лето / Зима) -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="season-offers">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider">Сезонные инженерные офферы</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        Летняя экономия vs Зимняя защита от морозов
+      </h2>
+      <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
+        Как правильно использовать систему в зависимости от сезона и инсоляции
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Summer Offer -->
+      <div class="control-card p-6 rounded-lg border-l-4 border-l-amber-500">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-[var(--text-main)] font-display">Летний режим: Солнце + Автономия</h3>
+            <span class="font-data text-[11px] text-amber-600 dark:text-amber-400 font-bold">Экономия до 80% на счетах за свет</span>
+          </div>
+        </div>
+        <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
+          В солнечные дни панели 2–4 кВт вырабатывают до 15–20 кВт·ч чистой энергии. Кондиционеры, морозильные витрины и кассовые узлы питаются прямо от солнца. При отключении центральной сети объект работает непрерывно.
+        </p>
+        <div class="p-3 rounded bg-[var(--bg-elevated)] font-data text-xs text-[var(--text-main)]">
+          💡 <strong>Инженерный факт:</strong> генерация покрывает дневной пик потребления без разряда АКБ.
+        </div>
+      </div>
+
+      <!-- Winter Offer -->
+      <div class="control-card p-6 rounded-lg border-l-4 border-l-blue-500">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined text-[18px]">ac_unit</span>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-[var(--text-main)] font-display">Зимний режим: Защита котлов и отопления</h3>
+            <span class="font-data text-[11px] text-blue-600 dark:text-blue-400 font-bold">0% риска разморозки труб</span>
+          </div>
+        </div>
+        <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
+          Зимой инсоляция падает до 20–30%. Система переводится в режим надежного резерва: инвертор Sunways/Deye держит 100% заряд LiFePO4 аккумулятора из сети и при обрыве ЛЭП за 0–10 мс включает циркуляционные насосы и фазозависимый газовый котел.
+        </p>
+        <div class="p-3 rounded bg-[var(--bg-elevated)] font-data text-xs text-[var(--text-main)]">
+          🛡️ <strong>Инженерный факт:</strong> чистый синус 220V гарантирует безопасную работу плат котлов Baxi, Vaillant, Protherm.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 3: Interactive Load & Autonomy Calculator (With Pecron E3800, F5000, Solar Panels & Seasons) -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="calculator">
+    <div class="control-card rounded-lg p-6 lg:p-10 shadow-sm">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider">Инженерный калькулятор</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+          Расчет времени автономной работы
+        </h2>
+        <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
+          Выберите приборы, подключение солнечных панелей и сезон — калькулятор покажет точные часы работы всех моделей
+        </p>
+      </div>
+
+      <!-- Season & Solar Panel Controls -->
+      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded bg-[var(--bg-elevated)] mb-6 border border-[var(--border-color)]">
+        <!-- Solar Panels Checkbox -->
+        <label class="flex items-center gap-2.5 cursor-pointer select-none">
+          <input type="checkbox" id="calcSolarCheckbox" class="w-4 h-4 text-primary rounded border-[var(--border-color)] focus:ring-primary"/>
+          <span class="font-bold text-xs sm:text-sm text-[var(--text-main)]">
+            + Подключить солнечные панели (СЭС 2–4 кВт)
+          </span>
+        </label>
+
+        <!-- Season Switcher -->
+        <div class="flex items-center gap-2 text-xs font-bold">
+          <span class="text-[var(--text-muted)]">Сезон:</span>
+          <div class="inline-flex rounded border border-[var(--border-color)] bg-[var(--bg-surface)] p-0.5">
+            <button id="btnSeasonSummer" class="px-3 py-1 rounded text-xs transition-colors bg-primary text-white">
+              ☀️ Лето
+            </button>
+            <button id="btnSeasonWinter" class="px-3 py-1 rounded text-xs transition-colors text-[var(--text-muted)]">
+              ❄️ Зима
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Checkbox Grid -->
+        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="calc-box-toggle control-card p-3 rounded cursor-pointer flex justify-between items-center border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors active-toggle" data-watts="180">
+            <div>
+              <div class="font-bold text-xs sm:text-sm text-[var(--text-main)]">Холодильник / Витрина</div>
+              <div class="font-data text-[11px] text-[var(--accent)]">180 Вт средн.</div>
+            </div>
+            <span class="toggle-status font-bold text-[var(--accent)] text-xs">✔</span>
+          </div>
+
+          <div class="calc-box-toggle control-card p-3 rounded cursor-pointer flex justify-between items-center border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors active-toggle" data-watts="120">
+            <div>
+              <div class="font-bold text-xs sm:text-sm text-[var(--text-main)]">Касса + Терминал + 1С</div>
+              <div class="font-data text-[11px] text-[var(--accent)]">120 Вт</div>
+            </div>
+            <span class="toggle-status font-bold text-[var(--accent)] text-xs">✔</span>
+          </div>
+
+          <div class="calc-box-toggle control-card p-3 rounded cursor-pointer flex justify-between items-center border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors active-toggle" data-watts="150">
+            <div>
+              <div class="font-bold text-xs sm:text-sm text-[var(--text-main)]">Газовый котёл + Насос</div>
+              <div class="font-data text-[11px] text-[var(--accent)]">150 Вт</div>
+            </div>
+            <span class="toggle-status font-bold text-[var(--accent)] text-xs">✔</span>
+          </div>
+
+          <div class="calc-box-toggle control-card p-3 rounded cursor-pointer flex justify-between items-center border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors active-toggle" data-watts="50">
+            <div>
+              <div class="font-bold text-xs sm:text-sm text-[var(--text-main)]">Wi-Fi роутер + Камеры</div>
+              <div class="font-data text-[11px] text-[var(--accent)]">50 Вт</div>
+            </div>
+            <span class="toggle-status font-bold text-[var(--accent)] text-xs">✔</span>
+          </div>
+
+          <div class="calc-box-toggle control-card p-3 rounded cursor-pointer flex justify-between items-center border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors" data-watts="200">
+            <div>
+              <div class="font-bold text-xs sm:text-sm text-[var(--text-main)]">LED-освещение (20 ламп)</div>
+              <div class="font-data text-[11px] text-[var(--accent)]">200 Вт</div>
+            </div>
+            <span class="toggle-status font-bold text-[var(--text-muted)] text-xs">+</span>
+          </div>
+
+          <div class="calc-box-toggle control-card p-3 rounded cursor-pointer flex justify-between items-center border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors" data-watts="350">
+            <div>
+              <div class="font-bold text-xs sm:text-sm text-[var(--text-main)]">Серверная база данных</div>
+              <div class="font-data text-[11px] text-[var(--accent)]">350 Вт</div>
+            </div>
+            <span class="toggle-status font-bold text-[var(--text-muted)] text-xs">+</span>
+          </div>
+        </div>
+
+        <!-- Calculation Display for All Models -->
+        <div class="lg:col-span-6 bg-[var(--bg-elevated)] border border-[var(--border-color)] rounded p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-baseline pb-3 border-b border-[var(--border-color)]">
+              <div>
+                <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider">Потребление:</span>
+                <div class="font-data text-xl font-extrabold text-[var(--text-main)]" id="calcTotalWatts">500 Вт</div>
+              </div>
+              <div class="text-right">
+                <span class="font-data text-xs text-amber-600 dark:text-amber-400 font-bold" id="solarStatusLabel">Без солнечной генерации</span>
+              </div>
+            </div>
+
+            <!-- Model Autonomy List -->
+            <div class="space-y-2.5 my-4">
+              <div class="flex justify-between items-center text-xs py-1 border-b border-[var(--border-color)]/50">
+                <span class="text-[var(--text-muted)]">FOSSiBOT F1200 (1.02 кВт·ч):</span>
+                <span class="font-data font-bold text-[var(--text-main)]" id="calcF1200Time">1.7 ч</span>
+              </div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-[var(--border-color)]/50">
+                <span class="text-[var(--text-muted)]">FOSSiBOT F2400 (2.04 кВт·ч):</span>
+                <span class="font-data font-bold text-[var(--text-main)]" id="calcF2400Time">3.5 ч</span>
+              </div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-[var(--border-color)]/50">
+                <span class="text-[var(--text-muted)]"><strong>PECRON E3800LFP</strong> (3.84 кВт·ч):</span>
+                <span class="font-data font-bold text-[var(--accent)]" id="calcPecronE3800Time">6.5 ч</span>
+              </div>
+              <div class="flex justify-between items-center text-xs py-1 border-b border-[var(--border-color)]/50">
+                <span class="text-[var(--text-muted)]"><strong>PECRON F5000</strong> (5.0 кВт·ч):</span>
+                <span class="font-data font-bold text-[var(--accent)]" id="calcF5000Time">8.5 ч</span>
+              </div>
+              <div class="flex justify-between items-center text-xs p-2 rounded bg-primary/10 border border-primary/30">
+                <span class="font-bold text-[var(--text-main)]">«Народный резерв» (5.12 кВт·ч):</span>
+                <span class="font-data font-extrabold text-[var(--accent)] text-sm" id="calcRezervTime">9.2 ч</span>
+              </div>
+              <div class="flex justify-between items-center text-xs py-1">
+                <span class="text-[var(--text-muted)]">Deye Премиум (15.3 кВт·ч):</span>
+                <span class="font-data font-bold text-[var(--text-main)]" id="calcDeyeTime">28 ч</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="tel:+79856747574" data-config="phoneButtonCalc" class="w-full text-center bg-primary text-white py-2.5 rounded font-label text-xs uppercase font-bold hover:bg-primary-dark transition-colors border border-primary-dark flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[16px]">phone</span> Заказать подбор по телефону +7 985 674 75 74
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 4: Product Catalog Grid -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="catalog">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider">Каталог оборудования</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        Готовые комплекты энергобезопасности
+      </h2>
+      <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
+        От мобильных станций до мощных 3-фазных инверторных комплексов с солнечными панелями
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Portable Stations (Pecron & FOSSiBOT) -->
+      <div class="control-card rounded-lg overflow-hidden flex flex-col justify-between">
+        <div class="p-5">
+          <div class="h-44 rounded overflow-hidden mb-5 bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+            <img src="assets/photo_fossibot_station.png" alt="Зарядные станции FOSSiBOT и Pecron" class="w-full h-full object-cover"/>
+          </div>
+          <span class="font-data text-[10.5px] text-sky-600 dark:text-sky-400 uppercase">Мобильный резерв</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 font-display">Pecron E3800 & FOSSiBOT</h3>
+          <p class="font-data text-xs text-[var(--accent)] my-1.5">1.2 – 3.8 кВт·ч | до 3600 Вт</p>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Мобильный резерв без монтажа. Быстрая зарядка от сети за 70 мин. Розетки 220V + Type-C PD 100W.
+          </p>
+        </div>
+        <div class="p-5 pt-0">
+          <a href="tel:+79856747574" data-config="phoneTel" class="block text-center bg-[var(--bg-elevated)] border border-[var(--border-color)] text-[var(--text-main)] py-2.5 rounded font-label text-xs uppercase hover:border-[var(--accent)] transition-colors">
+            Заказать станцию
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2: Narodny Rezerv 6.2 kW (Hit) -->
+      <div class="control-card rounded-lg overflow-hidden border-2 border-[var(--accent)] flex flex-col justify-between relative">
+        <div class="p-5">
+          <div class="h-44 rounded overflow-hidden mb-5 bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+            <img src="assets/08_real_installation_utility_room_narodny_rezerv_6_2kw.png" alt="Комплекс Народный резерв 6.2 кВт" class="w-full h-full object-cover"/>
+          </div>
+          <span class="font-data text-[10.5px] text-[var(--peach)] uppercase font-bold">Хит продаж под ключ</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 font-display">«Народный резерв» 6.2 кВт</h3>
+          <p class="font-data text-xs text-[var(--accent)] my-1.5">6.2 кВт (пик 12 кВт) | 5.12 кВт·ч LiFePO4</p>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Монтаж в щит с АВР 0–10 мс. Чистый синус 220V. Идеален для магазинов, аптек, кафе и загородных коттеджей.
+          </p>
+        </div>
+        <div class="p-5 pt-0">
+          <a href="tel:+79856747574" data-config="phoneTel" class="block text-center bg-primary text-white py-2.5 rounded font-label text-xs uppercase font-bold hover:bg-primary-dark transition-colors border border-primary-dark">
+            Заказать монтаж в щит
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3: Deye & Solar -->
+      <div class="control-card rounded-lg overflow-hidden flex flex-col justify-between">
+        <div class="p-5">
+          <div class="h-44 rounded overflow-hidden mb-5 bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+            <img src="assets/photo_deye_hybrid_cabinet.png" alt="Deye Премиум гибридный инвертор" class="w-full h-full object-cover"/>
+          </div>
+          <span class="font-data text-[10.5px] text-[var(--peach)] uppercase">Премиум и СЭС</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 font-display">Deye 3-фазный & СЭС</h3>
+          <p class="font-data text-xs text-[var(--accent)] my-1.5">6 – 50 кВт | 15 – 100 кВт·ч</p>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Полноценные 3 фазы 380V с асимметричной балансировкой. Подключение солнечных панелей 550–650 Вт.
+          </p>
+        </div>
+        <div class="p-5 pt-0">
+          <a href="tel:+79856747574" data-config="phoneTel" class="block text-center bg-[var(--bg-elevated)] border border-[var(--border-color)] text-[var(--text-main)] py-2.5 rounded font-label text-xs uppercase hover:border-[var(--accent)] transition-colors">
+            Рассчитать проект
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Screen 5: 5-Step Turnkey Workflow -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto border-t border-[var(--border-color)]/50" id="workflow">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider">Прозрачные условия</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        Как мы работаем: 5 шагов под ключ
+      </h2>
+      <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
+        Официальный договор, фиксированная смета и постоплата 50% только после сдачи
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="control-card p-5 rounded">
+        <span class="font-data text-[11px] text-[var(--accent)] font-bold">01 / Замер</span>
+        <h4 class="font-bold text-on-dark text-xs sm:text-sm mt-2 mb-1">Выезд инженера</h4>
+        <p class="text-[11px] text-[var(--text-muted)] leading-relaxed">Бесплатный аудит щитка, замер пусковых токов приборов.</p>
+      </div>
+
+      <div class="control-card p-5 rounded">
+        <span class="font-data text-[11px] text-[var(--accent)] font-bold">02 / Договор</span>
+        <h4 class="font-bold text-on-dark text-xs sm:text-sm mt-2 mb-1">Фиксация сметы</h4>
+        <p class="text-[11px] text-[var(--text-muted)] leading-relaxed">Официальный договор с ИП (безнал / нал) с гарантией.</p>
+      </div>
+
+      <div class="control-card p-5 rounded">
+        <span class="font-data text-[11px] text-[var(--peach)] font-bold">03 / Аванс 50%</span>
+        <h4 class="font-bold text-on-dark text-xs sm:text-sm mt-2 mb-1">Резерв техники</h4>
+        <p class="text-[11px] text-[var(--text-muted)] leading-relaxed">Предоплата 50% после подписания. Доставка на объект.</p>
+      </div>
+
+      <div class="control-card p-5 rounded">
+        <span class="font-data text-[11px] text-[var(--accent)] font-bold">04 / Монтаж</span>
+        <h4 class="font-bold text-on-dark text-xs sm:text-sm mt-2 mb-1">Установка АВР</h4>
+        <p class="text-[11px] text-[var(--text-muted)] leading-relaxed">Монтаж кабелей, автоматов и байпаса электриками.</p>
+      </div>
+
+      <div class="control-card p-5 rounded border border-[var(--accent)] bg-[var(--bg-elevated)]">
+        <span class="font-data text-[11px] text-[var(--accent)] font-bold">05 / Сдача 50%</span>
+        <h4 class="font-bold text-[var(--text-main)] text-xs sm:text-sm mt-2 mb-1">Тест под нагрузкой</h4>
+        <p class="text-[11px] text-[var(--text-muted)] leading-relaxed">Окончательный расчет только после подписания акта.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen 6: FAQ Accordion -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="faq">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider">Вопросы и ответы</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        Часто задаваемые вопросы
+      </h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-3">
+      <div class="control-card rounded overflow-hidden">
+        <button class="w-full p-5 text-left font-bold text-xs sm:text-sm text-[var(--text-main)] flex justify-between items-center cursor-pointer faq-btn">
+          <span>Можно ли ставить систему в квартире или закрытом офисе?</span>
+          <span class="material-symbols-outlined text-[var(--accent)] faq-icon text-[18px]">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-xs text-[var(--text-muted)] leading-relaxed faq-content">
+          Да, абсолютно. В наших системах используются безопасные LiFePO4 аккумуляторы. Они не выделяют токсичных газов, не имеют запаха, работают бесшумно и полностью разрешены для установки в жилых помещениях.
+        </div>
+      </div>
+
+      <div class="control-card rounded overflow-hidden">
+        <button class="w-full p-5 text-left font-bold text-xs sm:text-sm text-[var(--text-main)] flex justify-between items-center cursor-pointer faq-btn">
+          <span>Сколько лет служат аккумуляторы LiFePO4?</span>
+          <span class="material-symbols-outlined text-[var(--accent)] faq-icon text-[18px]">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-xs text-[var(--text-muted)] leading-relaxed faq-content hidden">
+          Литий-железо-фосфатные (LiFePO4) ячейки рассчитаны на 6000+ полных циклов заряда-разряда. При ежедневных отключениях электросети это более 15 лет непрерывной стабильной работы.
+        </div>
+      </div>
+
+      <div class="control-card rounded overflow-hidden">
+        <button class="w-full p-5 text-left font-bold text-xs sm:text-sm text-[var(--text-main)] flex justify-between items-center cursor-pointer faq-btn">
+          <span>Выдержит ли система пусковые токи компрессоров и насосов?</span>
+          <span class="material-symbols-outlined text-[var(--accent)] faq-icon text-[18px]">expand_more</span>
+        </button>
+        <div class="px-5 pb-5 text-xs text-[var(--text-muted)] leading-relaxed faq-content hidden">
+          Да. Инвертор «Народный резерв» 6.2 кВт выдерживает двукратную пиковую перегрузку до 12 кВт, что обеспечивает уверенный запуск любых промышленных компрессоров, витрин и скважинных насосов.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-[var(--border-color)] bg-[var(--bg-main)] py-12" id="contact">
+  <div class="max-w-screen-xl mx-auto px-6 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="material-symbols-outlined text-[var(--accent)]">bolt</span>
+          <span class="font-extrabold text-lg text-[var(--text-main)] tracking-wider font-display">РОБОСТОК</span>
+        </div>
+        <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+          Федеральный интегратор автономного энергоснабжения, гибридных инверторов и зарядных станций под ключ. 0 дБ шума, 0 л бензина, 100% защита от блэкаутов.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold text-[var(--text-main)] font-display mb-3 uppercase tracking-wider">Оборудование</h4>
+        <ul class="space-y-1.5 text-xs text-[var(--text-muted)]">
+          <li>Комплексы «Народный резерв» 6.2 кВт</li>
+          <li>Станции Pecron E3800 / PECRON F5000</li>
+          <li>Премиум-инверторы Deye (3 фазы 380V)</li>
+          <li>Солнечные электростанции (СЭС) под ключ</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs font-bold text-[var(--text-main)] font-display mb-3 uppercase tracking-wider">Контакты и Заказ</h4>
+        <p class="font-data text-xs text-[var(--text-muted)] space-y-1.5">
+          <span>Телефон: <a href="tel:+79856747574" data-config="phoneTel" class="text-[var(--accent)] font-bold underline"><span data-config="phoneDisplay">+7 985 674 75 74</span></a></span><br/>
+          <span>Telegram: <a href="https://t.me/killa_xx" data-config="telegramLink" class="text-[var(--accent)] underline"><span data-config="telegramUser">@killa_xx</span></a></span><br/>
+          <span><span data-config="entityName">ИП Орлов Дмитрий Валериевич</span> · ИНН <span data-config="inn">930901079909</span></span><br/>
+          <span data-config="regionsServed">ДНР, Ростовская обл., Москва, вся Россия</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-[var(--border-color)]/60 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-[var(--text-muted)] font-data">
+      <div>© 2026 РОБОСТОК · Все права защищены</div>
+      <div>
+        <a href="llm.txt" class="text-[var(--accent)] hover:underline">llm.txt for AI Agents</a> · 
+        <a href="tel:+79856747574" data-config="phoneButtonFooter" class="hover:underline">Вызвать инженера: +7 985 674 75 74</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Config and Scripts -->
+<script src="site-config.js"></script>
+<script>
+  // Theme Toggle & System Preference Detection
+  const themeToggleBtn = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+
+  function applyTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      themeIcon.textContent = 'light_mode';
+    } else {
+      document.documentElement.classList.remove('dark');
+      themeIcon.textContent = 'dark_mode';
+    }
+  }
+
+  // Initial Theme: Check localStorage or system preference
+  const savedTheme = localStorage.getItem('robostok_theme');
+  if (savedTheme) {
+    applyTheme(savedTheme === 'dark');
+  } else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark);
+  }
+
+  // Listen for OS theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('robostok_theme')) {
+      applyTheme(e.matches);
+    }
+  });
+
+  themeToggleBtn.addEventListener('click', () => {
+    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+    const newThemeDark = !isCurrentlyDark;
+    applyTheme(newThemeDark);
+    localStorage.setItem('robostok_theme', newThemeDark ? 'dark' : 'light');
+  });
+
+  // Control plane log ticker simulator
+  const logs = [
+    { text: "ИБП ввод резерва: 0 мс [СЕТЬ В НОРМЕ]", color: "text-success", icon: "check_circle" },
+    { text: "LiFePO4 батарея 5.12 кВт·ч: 100% Заряд (6000+ циклов)", color: "text-primary", icon: "battery_charging_full" },
+    { text: "Пусковой ток компрессора: 1.9 кВт [ПИК ОТРАБОТАН]", color: "text-amber-500", icon: "offline_bolt" },
+    { text: "Солнечный MPPT контроллер: 3.8 кВт генерации", color: "text-primary", icon: "solar_power" },
+    { text: "Диагностика щитка: АВР готов к автоматическому вводу", color: "text-success", icon: "speed" }
+  ];
+
+  const container = document.getElementById('log-container');
+  let currentLogIndex = 0;
+
+  function renderLog() {
+    const log = logs[currentLogIndex];
+    container.innerHTML = `
+      <div class="flex items-center gap-2 w-full log-slide text-ellipsis whitespace-nowrap overflow-hidden">
+        <span class="material-symbols-outlined text-[15px] ${log.color}">${log.icon}</span>
+        <span class="${log.color}">[${new Date().toLocaleTimeString()}] ${log.text}</span>
+      </div>
+    `;
+    currentLogIndex = (currentLogIndex + 1) % logs.length;
+  }
+  renderLog();
+  setInterval(renderLog, 4000);
+
+  // Calculator Logic with Pecron E3800, F5000, Solar Panels & Seasons
+  let isSummer = true;
+  let hasSolar = false;
+
+  const btnSummer = document.getElementById('btnSeasonSummer');
+  const btnWinter = document.getElementById('btnSeasonWinter');
+  const solarCheckbox = document.getElementById('calcSolarCheckbox');
+  const solarStatusLabel = document.getElementById('solarStatusLabel');
+
+  const calcToggles = document.querySelectorAll('.calc-box-toggle');
+  const calcTotalWattsEl = document.getElementById('calcTotalWatts');
+
+  const calcF1200Time = document.getElementById('calcF1200Time');
+  const calcF2400Time = document.getElementById('calcF2400Time');
+  const calcPecronE3800Time = document.getElementById('calcPecronE3800Time');
+  const calcF5000Time = document.getElementById('calcF5000Time');
+  const calcRezervTime = document.getElementById('calcRezervTime');
+  const calcDeyeTime = document.getElementById('calcDeyeTime');
+
+  function calculateAutonomy() {
+    let totalWatts = 0;
+    calcToggles.forEach(t => {
+      if (t.classList.contains('active-toggle')) {
+        totalWatts += parseInt(t.getAttribute('data-watts'), 10) || 0;
+      }
+    });
+
+    if (calcTotalWattsEl) calcTotalWattsEl.textContent = `${totalWatts} Вт`;
+
+    if (totalWatts === 0) {
+      calcF1200Time.textContent = '—';
+      calcF2400Time.textContent = '—';
+      calcPecronE3800Time.textContent = '—';
+      calcF5000Time.textContent = '—';
+      calcRezervTime.textContent = '—';
+      calcDeyeTime.textContent = '—';
+      return;
+    }
+
+    // Solar generation boost factor
+    let solarMultiplier = 1.0;
+    if (hasSolar) {
+      solarMultiplier = isSummer ? 2.2 : 1.25;
+      solarStatusLabel.textContent = isSummer 
+        ? '☀️ СЭС Лето: +120% к автономии (дневной буфер)' 
+        : '❄️ СЭС Зима: +25% к автономии';
+    } else {
+      solarStatusLabel.textContent = 'Без солнечной генерации';
+    }
+
+    const hF1200 = ((1024 * 0.85) / totalWatts) * (hasSolar ? 1.4 : 1.0);
+    const hF2400 = ((2048 * 0.85) / totalWatts) * (hasSolar ? 1.6 : 1.0);
+    const hE3800 = ((3840 * 0.88) / totalWatts) * (hasSolar ? 1.8 : 1.0);
+    const hF5000 = ((5000 * 0.90) / totalWatts) * solarMultiplier;
+    const hRezerv = ((5120 * 0.90) / totalWatts) * solarMultiplier;
+    const hDeye = ((15360 * 0.92) / totalWatts) * (hasSolar ? (isSummer ? 3.0 : 1.5) : 1.0);
+
+    function formatHours(h) {
+      if (h >= 48) return `>48 ч (до 3–5 сут)`;
+      if (h < 1) return `${Math.round(h * 60)} мин`;
+      const fullHours = Math.floor(h);
+      const mins = Math.round((h - fullHours) * 60);
+      if (mins === 0 || fullHours >= 10) return `~${Math.round(h)} ч`;
+      return `${fullHours} ч ${mins} м`;
+    }
+
+    calcF1200Time.textContent = formatHours(hF1200);
+    calcF2400Time.textContent = formatHours(hF2400);
+    calcPecronE3800Time.textContent = formatHours(hE3800);
+    calcF5000Time.textContent = formatHours(hF5000);
+    calcRezervTime.textContent = formatHours(hRezerv);
+    calcDeyeTime.textContent = formatHours(hDeye);
+  }
+
+  // Event handlers for seasonal buttons
+  btnSummer.addEventListener('click', () => {
+    isSummer = true;
+    btnSummer.className = 'px-3 py-1 rounded text-xs transition-colors bg-primary text-white';
+    btnWinter.className = 'px-3 py-1 rounded text-xs transition-colors text-[var(--text-muted)]';
+    calculateAutonomy();
+  });
+
+  btnWinter.addEventListener('click', () => {
+    isSummer = false;
+    btnWinter.className = 'px-3 py-1 rounded text-xs transition-colors bg-primary text-white';
+    btnSummer.className = 'px-3 py-1 rounded text-xs transition-colors text-[var(--text-muted)]';
+    calculateAutonomy();
+  });
+
+  solarCheckbox.addEventListener('change', (e) => {
+    hasSolar = e.target.checked;
+    calculateAutonomy();
+  });
+
+  calcToggles.forEach(t => {
+    t.addEventListener('click', () => {
+      t.classList.toggle('active-toggle');
+      const statusSpan = t.querySelector('.toggle-status');
+      if (t.classList.contains('active-toggle')) {
+        statusSpan.textContent = '✔';
+        statusSpan.className = 'toggle-status font-bold text-[var(--accent)] text-xs';
+      } else {
+        statusSpan.textContent = '+';
+        statusSpan.className = 'toggle-status font-bold text-[var(--text-muted)] text-xs';
+      }
+      calculateAutonomy();
+    });
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isHidden = content.classList.contains('hidden');
+      
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.textContent = 'expand_more');
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.textContent = 'expand_less';
+      }
+    });
+  });
+
+  calculateAutonomy();
+</script>
+</body>
+</html>
