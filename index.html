@@ -224,10 +224,11 @@
     <!-- Nav Links -->
     <div class="hidden lg:flex gap-6 items-center text-xs font-semibold">
       <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#comparison">Сравнение с генератором</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#equipment-stack">Комплектация под ключ</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#guarantee">Гарантия без риска</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#calculator">Калькулятор автономии</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#faq">Вопросы и ответы</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#protocol">Регламент замера</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#configurations">Готовые комплексы</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#guarantee">Гарантия 50/50</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#calculator">Калькулятор</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#faq">FAQ</a>
     </div>
 
     <!-- Phone, Direct Call & Theme Toggle -->
@@ -272,14 +273,25 @@
       </p>
     </div>
 
-    <!-- Actions -->
-    <div class="flex flex-wrap gap-3.5 justify-center items-center mb-8">
-      <a href="tel:+79856747574" data-config="phoneButtonHero" class="bg-primary text-white font-label text-xs uppercase tracking-wider px-6 py-3.5 rounded hover:bg-primary-dark transition-colors flex items-center gap-2 shadow-sm">
-        <span class="material-symbols-outlined text-[18px]">call</span> Бесплатный аудит: +7 985 674 75 74
+    <!-- Actions & High-Intent CTAs -->
+    <div class="flex flex-wrap gap-3.5 justify-center items-center mb-5">
+      <a href="https://t.me/killa_xx" target="_blank" rel="noopener" data-config="telegramLink" class="bg-primary text-white font-label text-xs uppercase font-bold tracking-wider px-6 py-3.5 rounded hover:bg-primary-dark transition-colors flex items-center gap-2 shadow-md hover:shadow-lg">
+        <span class="material-symbols-outlined text-[18px]">send</span> Написать инженеру в Telegram
       </a>
-      <a href="#calculator" class="control-card text-[var(--text-main)] font-label text-xs uppercase tracking-wider px-6 py-3.5 rounded hover:border-[var(--accent)] transition-colors flex items-center gap-2">
-        <span class="material-symbols-outlined text-[18px]">calculate</span> Рассчитать время работы
+      <a href="tel:+798****7574" data-config="phoneButtonHero" class="control-card text-[var(--text-main)] font-label text-xs uppercase font-bold tracking-wider px-6 py-3.5 rounded hover:border-[var(--accent)] transition-colors flex items-center gap-2 shadow-sm">
+        <span class="material-symbols-outlined text-[18px]">call</span> Заказать аудит щитка
       </a>
+      <a href="#calculator" class="text-[var(--accent)] font-semibold text-xs hover:underline flex items-center gap-1 py-2 px-3">
+        <span class="material-symbols-outlined text-[16px]">calculate</span> Рассчитать автономию ↓
+      </a>
+    </div>
+
+    <!-- Micro-Trust Badges (Hard Facts) -->
+    <div class="flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-[var(--text-muted)] mb-8 max-w-3xl text-center">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">verified</span> Замер пусковых токов клещами</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">payments</span> Оплата 50/50 по акту после теста</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">gavel</span> Договор с ИП Орлов Д.В.</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">volume_off</span> 0 дБ шума · 0 л бензина</span>
     </div>
 
     <!-- Status Log Bar -->
@@ -361,6 +373,224 @@
             <span><strong>15+ лет службы (6000+ циклов):</strong> литий-железо-фосфатные аккумуляторы без затрат на ТО.</span>
           </li>
         </ul>
+      </div>
+    </div>
+
+    <!-- TCO Calculation Card (Proof over Promises) -->
+    <div class="mt-8 control-card p-6 lg:p-8 rounded-lg bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-[var(--border-color)]">
+        <div>
+          <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider font-bold">Экономический расчёт</span>
+          <h3 class="text-lg sm:text-xl font-extrabold text-[var(--text-main)] font-display mt-0.5">
+            Совокупная стоимость владения (TCO) за 3 года при регулярных отключениях
+          </h3>
+        </div>
+        <div class="text-xs font-data font-bold text-[var(--accent)] bg-[var(--bg-surface)] px-3 py-1.5 rounded border border-[var(--border-color)] shrink-0">
+          Модель: 300 часов отключений / год
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <!-- Generator TCO -->
+        <div class="p-5 rounded bg-[var(--bg-surface)] border border-error/30 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-bold text-sm text-[var(--text-main)]">Генератор 5.5 кВт (Бензин)</span>
+              <span class="font-data text-xs text-error font-bold">Высокие скрытые расходы</span>
+            </div>
+            <ul class="space-y-2 text-xs text-[var(--text-muted)] font-data">
+              <li class="flex justify-between"><span>Покупка генератора и щита:</span> <span class="text-[var(--text-main)]">~75 000 ₽</span></li>
+              <li class="flex justify-between"><span>Бензин (350 л/год × 3 года × 65 ₽):</span> <span class="text-error font-bold">~68 250 ₽</span></li>
+              <li class="flex justify-between"><span>Замена масла, свечей, фильтров (каждые 50 ч):</span> <span class="text-error font-bold">~24 000 ₽</span></li>
+              <li class="flex justify-between"><span>Монтаж выхлопа и вентиляции:</span> <span class="text-[var(--text-main)]">~15 000 ₽</span></li>
+            </ul>
+          </div>
+          <div class="pt-4 mt-4 border-t border-[var(--border-color)] flex justify-between items-baseline">
+            <span class="text-xs text-[var(--text-muted)] font-bold">Итого за 3 года:</span>
+            <span class="font-data text-base font-extrabold text-error">~182 250 ₽</span>
+          </div>
+        </div>
+
+        <!-- РОБОСТОК TCO -->
+        <div class="p-5 rounded bg-primary/5 border border-primary/40 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-3">
+              <span class="font-bold text-sm text-[var(--text-main)]">Инверторная система РОБОСТОК (5.12 кВт·ч)</span>
+              <span class="font-data text-xs text-emerald-600 dark:text-emerald-400 font-bold">0 ₽ на эксплуатацию</span>
+            </div>
+            <ul class="space-y-2 text-xs text-[var(--text-main)] font-data">
+              <li class="flex justify-between"><span>Оборудование и монтаж под ключ:</span> <span class="text-[var(--text-main)]">Единовременная инвестиция</span></li>
+              <li class="flex justify-between"><span>Затраты на топливо:</span> <span class="text-emerald-600 dark:text-emerald-400 font-bold">0 ₽</span></li>
+              <li class="flex justify-between"><span>Регламентное ТО и расходники:</span> <span class="text-emerald-600 dark:text-emerald-400 font-bold">0 ₽</span></li>
+              <li class="flex justify-between"><span>Ресурс LiFePO4:</span> <span class="text-[var(--accent)] font-bold">6000+ циклов (15+ лет)</span></li>
+            </ul>
+          </div>
+          <div class="pt-4 mt-4 border-t border-primary/20 flex justify-between items-baseline">
+            <span class="text-xs text-[var(--text-muted)] font-bold">Стоимость владения в день:</span>
+            <span class="font-data text-base font-extrabold text-emerald-600 dark:text-emerald-400">0 ₽ / день</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen: 4-Step Engineering Protocol (Hard Process) -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="protocol">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider font-bold">Инженерный регламент</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        4 шага от заявки до полной энергонезависимости
+      </h2>
+      <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
+        Исключаем ошибки подбора: мы измеряем реальные пусковые нагрузки, а не гадаем по паспортам
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="control-card p-5 rounded-lg flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center font-bold text-xs mb-3 font-data">01</div>
+          <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">Замер пусковых токов клещами</h4>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Инженер выезжает на объект с токоизмерительными клещами и фиксирует пиковые токи насосов, холодильников и котлов при старте.
+          </p>
+        </div>
+        <span class="font-data text-[11px] text-[var(--accent)] mt-3 block font-bold">✓ Исключает уход в защиту</span>
+      </div>
+
+      <div class="control-card p-5 rounded-lg flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center font-bold text-xs mb-3 font-data">02</div>
+          <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">Смета и договор с ИП</h4>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Составляем точную спецификацию оборудования. Заключаем договор с ИП Орлов Д.В. с фиксацией цены. Аванс 50% строго на закупку.
+          </p>
+        </div>
+        <span class="font-data text-[11px] text-[var(--accent)] mt-3 block font-bold">✓ Без скрытых доплат</span>
+      </div>
+
+      <div class="control-card p-5 rounded-lg flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center font-bold text-xs mb-3 font-data">03</div>
+          <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">Монтаж в щит за 1 день</h4>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Установка инвертора, батареи LiFePO4 и щита АВР. Используем силовые медные кабели по ГОСТ с гидравлической опрессовкой.
+          </p>
+        </div>
+        <span class="font-data text-[11px] text-[var(--accent)] mt-3 block font-bold">✓ Чистый монтаж</span>
+      </div>
+
+      <div class="control-card p-5 rounded-lg flex flex-col justify-between">
+        <div>
+          <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center font-bold text-xs mb-3 font-data">04</div>
+          <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">Стресс-тест и оплата 50%</h4>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed">
+            Имитируем аварию сети, запускаем все ваши приборы под нагрузкой. Только после проверки подписываем акт и вы платите вторые 50%.
+          </p>
+        </div>
+        <span class="font-data text-[11px] text-emerald-600 dark:text-emerald-400 mt-3 block font-bold">✓ 100% защита заказчика</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen: Ready-Made Configurations (Hit Solutions) -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="configurations">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider font-bold">Популярные комплексы</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        Проверенные конфигурации под ключ
+      </h2>
+      <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
+        Оборудование с гарантией до 36 месяцев, готовое к монтажу в любой электрощит
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Config 1: 4.2 kW / 5.12 kWh -->
+      <div class="control-card p-6 rounded-lg flex flex-col justify-between border-2 border-primary/40 relative overflow-hidden">
+        <div class="absolute top-3 right-3 bg-primary text-white font-data text-[10px] font-bold px-2 py-0.5 rounded uppercase">
+          Хит для дома
+        </div>
+        <div>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">1 фаза · 220V</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Народный Резерв» 4.2 кВт</h3>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
+            Гибридный инвертор Sunways 4.2 кВт + LiFePO4 накопитель 5.12 кВт·ч. Чистый синус для котлов отопления, холодильников, освещения и Wi-Fi.
+          </p>
+          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-6">
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Ёмкость аккумулятора:</span>
+              <span class="font-bold">5.12 кВт·ч (100 А·ч)</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Время автономии:</span>
+              <span class="font-bold text-[var(--accent)]">12–24 часа</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-[var(--text-muted)]">Ввод резерва:</span>
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">0–10 мс (без моргания)</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center bg-primary text-white py-2.5 rounded font-label text-xs uppercase font-bold hover:bg-primary-dark transition-colors flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">send</span> Запросить смету в TG
+        </a>
+      </div>
+
+      <!-- Config 2: 6.2 kW / 10.24 kWh -->
+      <div class="control-card p-6 rounded-lg flex flex-col justify-between border border-[var(--border-color)] relative">
+        <div>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">1 фаза · 220V</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Народный Резерв Плюс» 6.2 кВт</h3>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
+            Инвертор Sunways 6.2 кВт + 2x LiFePO4 модуля (10.24 кВт·ч). Для больших домов со скважинными насосами, кондиционерами, аптек и магазинов.
+          </p>
+          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-6">
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Ёмкость аккумулятора:</span>
+              <span class="font-bold">10.24 кВт·ч (200 А·ч)</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Время автономии:</span>
+              <span class="font-bold text-[var(--accent)]">24–48 часов</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-[var(--text-muted)]">Пусковой запас:</span>
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">до 12 кВт в пике</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center control-card text-[var(--text-main)] py-2.5 rounded font-label text-xs uppercase font-bold hover:border-[var(--accent)] transition-colors flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">send</span> Запросить смету в TG
+        </a>
+      </div>
+
+      <!-- Config 3: PECRON / Deye -->
+      <div class="control-card p-6 rounded-lg flex flex-col justify-between border border-[var(--border-color)] relative">
+        <div>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">3 фазы 380V / Мобильный</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">PECRON & Deye Премиум</h3>
+          <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
+            Мобильные силовые станции PECRON E3800 / F5000 и 3-фазные инверторы Deye (6–12 кВт) с высоковольтными АКБ до 30 кВт·ч.
+          </p>
+          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-6">
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Ёмкость батарей:</span>
+              <span class="font-bold">от 3.84 до 30.7 кВт·ч</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Зарядка от сети/СЭС:</span>
+              <span class="font-bold text-[var(--accent)]">1.5–2.5 часа</span>
+            </div>
+            <div class="flex justify-between py-1">
+              <span class="text-[var(--text-muted)]">Назначение:</span>
+              <span class="font-bold">Коттеджи от 250 м², HoReCa, клиники</span>
+            </div>
+          </div>
+        </div>
+        <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center control-card text-[var(--text-main)] py-2.5 rounded font-label text-xs uppercase font-bold hover:border-[var(--accent)] transition-colors flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined text-[16px]">send</span> Запросить смету в TG
+        </a>
       </div>
     </div>
   </section>
@@ -598,6 +828,31 @@
             <span class="material-symbols-outlined text-[16px]">phone</span> Заказать подбор: +7 985 674 75 74
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screen: Direct Fast Lead Qualification (Funnel CTA) -->
+  <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="quick-audit">
+    <div class="control-card p-8 lg:p-12 rounded-xl bg-[var(--bg-elevated)] border-2 border-primary/50 text-center max-w-4xl mx-auto shadow-sm">
+      <div class="w-12 h-12 rounded-full bg-primary/20 text-[var(--accent)] flex items-center justify-center mx-auto mb-4">
+        <span class="material-symbols-outlined text-[28px]">electric_meter</span>
+      </div>
+      <span class="font-data text-xs text-[var(--accent)] font-bold uppercase tracking-wider">Экспресс-расчёт за 15 минут</span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
+        Не знаете, какой мощности нужен инвертор?
+      </h2>
+      <p class="text-xs sm:text-sm text-[var(--text-muted)] max-w-2xl mx-auto mt-2 mb-8 leading-relaxed">
+        Пришлите в Telegram фото вашего электрощитка и список приборов, которые должны работать при отключении. Инженер бесплатно рассчитает пусковые токи и пришлет готовую смету под ключ.
+      </p>
+
+      <div class="flex flex-wrap gap-4 justify-center items-center">
+        <a href="https://t.me/killa_xx" target="_blank" rel="noopener" data-config="telegramLink" class="bg-primary text-white font-label text-xs uppercase font-bold tracking-wider px-8 py-4 rounded hover:bg-primary-dark transition-colors flex items-center gap-2 shadow-md hover:shadow-lg">
+          <span class="material-symbols-outlined text-[20px]">send</span> Отправить фото щитка в Telegram (@killa_xx)
+        </a>
+        <a href="tel:+798****7574" data-config="phoneTel" class="control-card text-[var(--text-main)] font-label text-xs uppercase font-bold tracking-wider px-6 py-4 rounded hover:border-[var(--accent)] transition-colors flex items-center gap-2 shadow-sm">
+          <span class="material-symbols-outlined text-[20px]">phone_in_talk</span> Позвонить: +7 985 674 75 74
+        </a>
       </div>
     </div>
   </section>

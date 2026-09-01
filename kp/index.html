@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html class="light" lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="robots" content="noindex, nofollow, noarchive"/>
+  <title>Коммерческое предложение · РОБОСТОК</title>
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    :root {
+      --bg-main: #F7F6F2;
+      --bg-surface: #FFFFFF;
+      --bg-elevated: #EEF2F1;
+      --text-main: #20313A;
+      --text-muted: #5C6C75;
+      --border-color: #DDE5E2;
+      --accent: #2F6F68;
+      --accent-soft: #A9DCD3;
+      --accent-dark: #285C57;
+      --peach: #F7D2B9;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .font-data { font-family: 'JetBrains Mono', monospace; }
+
+    /* Print Stylesheet for Clean A4 / PDF Export */
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 11pt;
+      }
+      .no-print { display: none !important; }
+      .proposal-sheet {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .proposal-table th, .proposal-table td {
+        border-color: #CCCCCC !important;
+      }
+      .page-break {
+        page-break-after: always;
+      }
+    }
+
+    /* Digit Inputs */
+    .pin-input {
+      width: 48px;
+      height: 58px;
+      text-align: center;
+      font-size: 24px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--bg-surface);
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .pin-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(47, 111, 104, 0.15);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+  <!-- Top Global Header (No-Print) -->
+  <header class="no-print border-b border-[var(--border-color)] bg-[var(--bg-surface)] py-3 px-4 sm:px-8">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="../" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded bg-primary/10 border border-[var(--border-color)] flex items-center justify-center text-[var(--accent)] font-bold">
+          <span class="material-symbols-outlined text-[18px]">bolt</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-base tracking-wider text-[var(--text-main)]">РОБОСТОК</span>
+          <span class="font-data text-[9px] text-[var(--text-muted)] uppercase tracking-tight">Автономное питание</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <button id="btnOpenCreator" class="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1 bg-primary/5 px-2.5 py-1.5 rounded border border-primary/20">
+          <span class="material-symbols-outlined text-[16px]">add_circle</span> Создать новое КП
+        </button>
+        <a href="tel:+798****7574" class="hidden sm:flex items-center gap-1 text-xs font-bold text-[var(--accent)] font-data">
+          <span class="material-symbols-outlined text-[15px]">call</span> +7 985 674 75 74
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow flex items-center justify-center p-4 sm:p-6 lg:p-8" id="mainContainer">
+
+    <!-- 1. PIN GATE VIEW -->
+    <section id="pinGateView" class="w-full max-w-md bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl p-6 sm:p-8 shadow-sm text-center">
+      <div class="w-12 h-12 rounded-full bg-primary/10 text-[var(--accent)] flex items-center justify-center mx-auto mb-4">
+        <span class="material-symbols-outlined text-[24px]">lock</span>
+      </div>
+
+      <div class="font-data text-xs text-[var(--accent)] font-bold uppercase tracking-wider mb-1">РОБОСТОК</div>
+      <h1 class="text-xl sm:text-2xl font-extrabold text-[var(--text-main)] mb-2">
+        Доступ к коммерческому предложению
+      </h1>
+      <p class="text-xs text-[var(--text-muted)] mb-6 leading-relaxed">
+        Введите PIN из 5 цифр, который инженер отправил отдельно от ссылки.
+      </p>
+
+      <form id="pinForm" class="space-y-5" onsubmit="return false;">
+        <div class="flex justify-center gap-2 sm:gap-3" id="pinInputsContainer">
+          <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" autocomplete="one-time-code" class="pin-input" autofocus data-idx="0"/>
+          <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" class="pin-input" data-idx="1"/>
+          <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" class="pin-input" data-idx="2"/>
+          <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" class="pin-input" data-idx="3"/>
+          <input type="text" inputmode="numeric" maxlength="1" pattern="[0-9]" class="pin-input" data-idx="4"/>
+        </div>
+
+        <div id="pinErrorMessage" class="text-xs font-bold text-red-600 hidden">
+          Неверный PIN-код. Проверьте 5 цифр из сообщения.
+        </div>
+
+        <button type="submit" id="btnSubmitPin" class="w-full py-3 px-4 bg-primary text-white font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary-dark transition-colors shadow-sm flex items-center justify-center gap-1.5" style="background-color: #2F6F68;">
+          <span>Открыть КП</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </button>
+
+        <div class="text-[11px] text-[var(--text-muted)] font-data" id="attemptsRemainingText">
+          Осталось попыток: 7
+        </div>
+      </form>
+    </section>
+
+    <!-- 2. PROPOSAL VIEW (Rendered upon successful PIN unlock) -->
+    <article id="proposalView" class="w-full max-w-4xl bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl p-6 sm:p-10 shadow-sm hidden proposal-sheet my-4">
+      
+      <!-- Proposal Header -->
+      <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-6 border-b border-[var(--border-color)] gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded bg-primary/10 border border-[var(--border-color)] flex items-center justify-center text-[var(--accent)] font-bold shrink-0">
+            <span class="material-symbols-outlined text-[24px]">bolt</span>
+          </div>
+          <div>
+            <div class="font-extrabold text-xl tracking-wider text-[var(--text-main)]">РОБОСТОК</div>
+            <div class="text-xs text-[var(--text-muted)] font-medium">Инженерные решения автономного электропитания</div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+          <div class="text-right hidden sm:block">
+            <div class="text-xs font-bold text-[var(--text-main)] font-data" id="kpManagerPhoneDisplay">+7 985 674 75 74</div>
+            <div class="text-[11px] text-[var(--text-muted)]">www.robostok.ru</div>
+          </div>
+          <button type="button" onclick="window.print()" class="no-print py-2 px-3.5 bg-[var(--bg-elevated)] border border-[var(--border-color)] text-[var(--text-main)] rounded-lg text-xs font-bold hover:border-[var(--accent)] transition-colors flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">print</span>
+            <span>Печать / PDF</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Proposal Title Banner -->
+      <div class="py-6 flex flex-col sm:flex-row justify-between items-baseline gap-2 border-b border-[var(--border-color)]">
+        <div>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase tracking-wider">Индивидуальный расчет</span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-[var(--text-main)] mt-0.5" id="kpTitleDisplay">
+            Коммерческое предложение <span class="text-[var(--accent)]" id="kpNumberDisplay">№КП-205</span>
+          </h2>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-50 text-emerald-800 text-xs font-bold font-data border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span id="kpStatusBadge">КП актуально до 10 сентября 2026</span>
+        </div>
+      </div>
+
+      <!-- Client & Object Info Grid -->
+      <section class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-6 border-b border-[var(--border-color)] text-xs">
+        <div class="p-3.5 rounded bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+          <span class="text-[var(--text-muted)] block text-[11px] mb-0.5 font-medium">Адресат / Заказчик</span>
+          <strong class="text-sm text-[var(--text-main)]" id="kpClientName">Дмитрий Орлов</strong>
+        </div>
+        <div class="p-3.5 rounded bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+          <span class="text-[var(--text-muted)] block text-[11px] mb-0.5 font-medium">Объект и назначение</span>
+          <strong class="text-sm text-[var(--text-main)]" id="kpClientObject">Частный дом / Резерв</strong>
+        </div>
+        <div class="p-3.5 rounded bg-[var(--bg-elevated)] border border-[var(--border-color)]">
+          <span class="text-[var(--text-muted)] block text-[11px] mb-0.5 font-medium">Схема оплаты</span>
+          <strong class="text-sm text-emerald-700 font-data">50% аванс / 50% после теста</strong>
+        </div>
+      </section>
+
+      <!-- Variant Tabs (if multiple) -->
+      <div id="variantTabsContainer" class="flex gap-2 pt-6 overflow-x-auto no-print">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Variant Offer Panel -->
+      <section class="py-4">
+        <div class="mb-4">
+          <h3 class="text-base font-extrabold text-[var(--text-main)]" id="variantTitleDisplay">Вариант 1 (Премиум Резерв + СЭС)</h3>
+          <p class="text-xs text-[var(--text-muted)]" id="variantDescDisplay">Гибридный инвертор Deye 6.6 кВт с накопителем Dyness LiFePO4 5 кВт·ч и солнечной генерацией TOPCon</p>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto border border-[var(--border-color)] rounded-lg mb-6">
+          <table class="w-full text-left border-collapse text-xs proposal-table">
+            <thead>
+              <tr class="bg-[var(--bg-elevated)] border-b border-[var(--border-color)] text-[var(--text-muted)] font-data uppercase text-[10px]">
+                <th class="py-3 px-3 w-8 text-center">№</th>
+                <th class="py-3 px-4">Оборудование и услуги</th>
+                <th class="py-3 px-3 text-center w-16">Кол-во</th>
+                <th class="py-3 px-3 text-right w-28">Цена</th>
+                <th class="py-3 px-4 text-right w-28">Сумма</th>
+              </tr>
+            </thead>
+            <tbody id="kpItemsTableBody" class="divide-y divide-[var(--border-color)]">
+              <!-- Items injected via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Terms & Totals Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-[var(--bg-elevated)] p-5 rounded-lg border border-[var(--border-color)]">
+          <div class="md:col-span-7 space-y-2.5 text-xs text-[var(--text-muted)] font-data">
+            <div class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[16px] text-[var(--accent)] shrink-0 mt-0.5">local_shipping</span>
+              <div><strong class="text-[var(--text-main)] font-sans">Срок поставки:</strong> <span id="termDelivery">В наличии на складе (монтаж за 1 день)</span></div>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[16px] text-[var(--accent)] shrink-0 mt-0.5">receipt_long</span>
+              <div><strong class="text-[var(--text-main)] font-sans">Условия оплаты:</strong> <span id="termPayment">50% аванс по договору / 50% после проверки под нагрузкой</span></div>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[16px] text-[var(--accent)] shrink-0 mt-0.5">verified_user</span>
+              <div><strong class="text-[var(--text-main)] font-sans">Гарантия:</strong> <span>Официальная гарантия до 36 месяцев, договор с ИП</span></div>
+            </div>
+            <div class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-[16px] text-[var(--accent)] shrink-0 mt-0.5">build</span>
+              <div><strong class="text-[var(--text-main)] font-sans">Пусконаладка:</strong> <span>Замер пусковых токов клещами и тест под нагрузкой</span></div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 flex flex-col justify-between items-start md:items-end border-t md:border-t-0 md:border-l border-[var(--border-color)] pt-4 md:pt-0 md:pl-6">
+            <div class="w-full text-left md:text-right">
+              <span class="text-xs text-[var(--text-muted)] uppercase tracking-wider font-data">Итоговая стоимость:</span>
+              <div class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] font-data mt-1" id="kpGrandTotalDisplay">
+                263 900 ₽
+              </div>
+              <div class="text-[11px] text-[var(--text-muted)] mt-1">Включая оборудование, щит АВР и пусконаладку</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Engineer Support Notes -->
+      <section class="my-6 p-4 rounded-lg bg-primary/5 border border-primary/20 text-xs text-[var(--text-main)] leading-relaxed">
+        <div class="flex items-center gap-1.5 font-bold text-[var(--accent)] mb-1">
+          <span class="material-symbols-outlined text-[16px]">info</span>
+          <span>Пояснение ведущего инженера к смете:</span>
+        </div>
+        <div id="kpEngineerNotesDisplay">
+          Аккумуляторные батареи укомплектованы заводскими силовыми кабелями для подключения к инвертору. Комплекс обеспечивает мгновенный ввод резерва (0–10 мс) без моргания света и сбоев автоматики котла. Оплата вторых 50% производится строго после монтажа и проведения теста под реальной нагрузкой.
+        </div>
+      </section>
+
+      <!-- Manager & Actions Footer -->
+      <footer class="pt-6 border-t border-[var(--border-color)] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+        <!-- Manager Card -->
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-full bg-primary/20 text-[var(--accent)] font-bold flex items-center justify-center text-base shrink-0 font-data border border-primary/30">
+            ДО
+          </div>
+          <div class="text-xs">
+            <div class="text-[11px] text-[var(--text-muted)] font-medium">Ведущий инженер / Руководитель проектов</div>
+            <strong class="text-sm text-[var(--text-main)]" id="kpManagerName">Дмитрий Орлов</strong>
+            <div class="font-data text-[var(--text-muted)] mt-0.5 flex flex-wrap gap-2">
+              <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="text-[var(--accent)] hover:underline flex items-center gap-0.5">
+                <span class="material-symbols-outlined text-[14px]">send</span> @killa_xx
+              </a>
+              <span>·</span>
+              <a href="tel:+798****7574" class="text-[var(--text-main)] hover:underline font-bold" id="kpManagerPhoneFooter">
+                +7 985 674 75 74
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Stack (No-Print) -->
+        <div class="flex flex-wrap gap-2.5 w-full sm:w-auto no-print">
+          <button type="button" id="btnAcceptOffer" class="flex-1 sm:flex-none py-3 px-5 bg-primary text-white font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary-dark transition-colors shadow-sm flex items-center justify-center gap-1.5" style="background-color: #2F6F68;">
+            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+            <span>Оформить заказ</span>
+          </button>
+          <a href="https://t.me/killa_xx" target="_blank" rel="noopener" id="btnQuestionTg" class="flex-1 sm:flex-none py-3 px-4 bg-[var(--bg-elevated)] border border-[var(--border-color)] text-[var(--text-main)] font-bold text-xs uppercase tracking-wider rounded-lg hover:border-[var(--accent)] transition-colors flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">chat</span>
+            <span>Задать вопрос</span>
+          </a>
+        </div>
+      </footer>
+
+      <!-- Legal Footnote -->
+      <div class="pt-6 mt-6 border-t border-[var(--border-color)]/60 text-center sm:text-left text-[11px] text-[var(--text-muted)] font-data flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div>ИП Орлов Дмитрий Валериевич · ИНН 930901079909 · ОГРНИП 324930100030294</div>
+        <div>г. Донецк · Ростов-на-Дону · Москва · РФ</div>
+      </div>
+    </article>
+
+    <!-- 3. INTERACTIVE ORDER / ACCEPT MODAL -->
+    <div id="orderModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden no-print">
+      <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
+        <button id="btnCloseOrderModal" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--text-main)]">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+
+        <div class="w-10 h-10 rounded-full bg-primary/10 text-[var(--accent)] flex items-center justify-center mb-3">
+          <span class="material-symbols-outlined text-[22px]">check_circle</span>
+        </div>
+        <h3 class="text-lg font-extrabold text-[var(--text-main)] mb-1">Оформление заказа по КП</h3>
+        <p class="text-xs text-[var(--text-muted)] mb-5">
+          Подтвердите контактные данные для подготовки официального договора и бронирования оборудования.
+        </p>
+
+        <form id="orderForm" class="space-y-4" onsubmit="return handleOrderSubmit(event)">
+          <div>
+            <label class="block text-xs font-bold text-[var(--text-main)] mb-1">ФИО / Название организации</label>
+            <input type="text" id="orderClientName" required class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-[var(--border-color)] bg-[var(--bg-elevated)] focus:border-[var(--accent)] outline-none" placeholder="Иван Иванов"/>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[var(--text-main)] mb-1">Телефон для связи (Telegram / Звонок)</label>
+            <input type="tel" id="orderClientPhone" required class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-[var(--border-color)] bg-[var(--bg-elevated)] focus:border-[var(--accent)] outline-none" placeholder="+7 985 000 00 00"/>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[var(--text-main)] mb-1">Адрес объекта / Пожелания к монтажу</label>
+            <input type="text" id="orderClientAddress" class="w-full px-3.5 py-2.5 text-xs rounded-lg border border-[var(--border-color)] bg-[var(--bg-elevated)] focus:border-[var(--accent)] outline-none" placeholder="г. Донецк, частный дом / монтаж на следующей неделе"/>
+          </div>
+
+          <div class="pt-2 flex gap-3">
+            <button type="submit" class="flex-1 py-3 bg-primary text-white font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary-dark transition-colors shadow-sm flex items-center justify-center gap-1.5" style="background-color: #2F6F68;">
+              <span class="material-symbols-outlined text-[16px]">send</span>
+              <span>Подтвердить и отправить</span>
+            </button>
+          </div>
+        </form>
+
+        <div id="orderSuccessMessage" class="hidden text-center py-6">
+          <span class="material-symbols-outlined text-[48px] text-emerald-600 mb-2 block">task_alt</span>
+          <h4 class="font-bold text-base text-[var(--text-main)] mb-1">Заказ успешно зарегистрирован!</h4>
+          <p class="text-xs text-[var(--text-muted)] mb-4 leading-relaxed">
+            Инженер Дмитрий Орлов свяжется с вами в течение 15 минут для согласования удобного времени замера или даты монтажа.
+          </p>
+          <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--accent)] underline">
+            <span class="material-symbols-outlined text-[16px]">send</span> Написать напрямую в Telegram (@killa_xx)
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. KP CREATOR / GENERATOR MODAL (Allows Dmitry to easily create new KPs) -->
+    <div id="creatorModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden no-print overflow-y-auto">
+      <div class="bg-[var(--bg-surface)] border border-[var(--border-color)] rounded-xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
+        <button id="btnCloseCreatorModal" class="absolute top-4 right-4 text-[var(--text-muted)] hover:text-[var(--text-main)]">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+
+        <div class="flex items-center gap-2 text-[var(--accent)] font-bold text-xs uppercase font-data mb-1">
+          <span class="material-symbols-outlined text-[18px]">build_circle</span>
+          <span>Конструктор коммерческих предложений</span>
+        </div>
+        <h3 class="text-lg sm:text-xl font-extrabold text-[var(--text-main)] mb-4">Создать новое КП для клиента</h3>
+
+        <form id="creatorForm" class="space-y-4" onsubmit="return handleCreateKp(event)">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-[var(--text-main)] mb-1">Номер КП (напр. 206)</label>
+              <input type="text" id="crKpNumber" required class="w-full px-3 py-2 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)]" placeholder="206"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-[var(--text-main)] mb-1">PIN-код (5 цифр)</label>
+              <input type="text" id="crKpPin" required maxlength="5" pattern="[0-9]{5}" class="w-full px-3 py-2 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)] font-data font-bold" placeholder="78124"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-[var(--text-main)] mb-1">Срок действия</label>
+              <input type="date" id="crKpValidUntil" required class="w-full px-3 py-2 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)]"/>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-[var(--text-main)] mb-1">ФИО Клиента</label>
+              <input type="text" id="crClientName" required class="w-full px-3 py-2 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)]" placeholder="Сергей Иванович"/>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-[var(--text-main)] mb-1">Объект / Описание</label>
+              <input type="text" id="crClientObject" required class="w-full px-3 py-2 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)]" placeholder="Дом 180 м² / резерв котла и насосов"/>
+            </div>
+          </div>
+
+          <!-- Items Builder -->
+          <div class="pt-2">
+            <div class="flex justify-between items-center mb-2">
+              <label class="text-xs font-bold text-[var(--text-main)] uppercase tracking-wider font-data">Товары и услуги:</label>
+              <button type="button" onclick="addCreatorItemRow()" class="text-xs font-bold text-[var(--accent)] hover:underline flex items-center gap-0.5">
+                <span class="material-symbols-outlined text-[15px]">add</span> Добавить позицию
+              </button>
+            </div>
+
+            <div id="creatorItemsList" class="space-y-3">
+              <!-- Item Row Template -->
+              <div class="cr-item-row p-3 rounded bg-[var(--bg-elevated)] border border-[var(--border-color)] space-y-2">
+                <div class="grid grid-cols-12 gap-2">
+                  <input type="text" class="col-span-7 px-2.5 py-1.5 text-xs rounded border border-[var(--border-color)] cr-item-name" placeholder="Название оборудования" required value="Гибридный инвертор Sunways 6.2 кВт"/>
+                  <input type="number" class="col-span-2 px-2 py-1.5 text-xs rounded border border-[var(--border-color)] cr-item-qty text-center font-data" placeholder="Кол-во" value="1" required/>
+                  <input type="number" class="col-span-3 px-2 py-1.5 text-xs rounded border border-[var(--border-color)] cr-item-price text-right font-data" placeholder="Цена (₽)" value="89000" required/>
+                </div>
+                <textarea class="w-full px-2.5 py-1 text-xs rounded border border-[var(--border-color)] cr-item-desc" rows="1" placeholder="Инженерное описание (чистый синус, 220V...)">Чистый синус 220V, пик до 12 кВт, MPPT контроллер</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-[var(--text-main)] mb-1">Пояснение инженера к смете</label>
+            <textarea id="crEngineerNotes" rows="2" class="w-full px-3 py-2 text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)]">Комплекс укомплектован силовыми кабелями ГОСТ. Оплата 50% строго после теста под нагрузкой.</textarea>
+          </div>
+
+          <div class="pt-3 flex gap-3">
+            <button type="submit" class="flex-1 py-3 bg-primary text-white font-bold text-xs uppercase tracking-wider rounded-lg hover:bg-primary-dark transition-colors shadow-sm flex items-center justify-center gap-1.5" style="background-color: #2F6F68;">
+              <span class="material-symbols-outlined text-[16px]">save</span>
+              <span>Сгенерировать КП и текст для отправки</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Ready Text Output -->
+        <div id="creatorResultBox" class="hidden mt-6 pt-6 border-t border-[var(--border-color)] space-y-4">
+          <div class="p-3.5 rounded bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs">
+            <strong>КП успешно создано!</strong> Скопируйте готовое сообщение и отправьте клиенту в Telegram/WhatsApp:
+          </div>
+
+          <div class="relative">
+            <textarea id="creatorMessageTemplate" rows="7" readonly class="w-full p-3 font-data text-xs rounded border border-[var(--border-color)] bg-[var(--bg-elevated)] leading-relaxed"></textarea>
+            <button type="button" onclick="copyCreatorTemplate()" class="absolute top-2 right-2 py-1 px-2.5 bg-primary text-white text-[11px] font-bold rounded shadow-sm hover:bg-primary-dark">
+              Скопировать
+            </button>
+          </div>
+
+          <div class="flex gap-2">
+            <button type="button" id="btnPreviewNewKp" class="flex-1 py-2 px-3 bg-[var(--bg-surface)] border border-[var(--border-color)] text-xs font-bold rounded hover:border-[var(--accent)]">
+              Открыть созданное КП
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Global Scripts and Engine Logic -->
+  <script src="kp-data.js?v=20260831_1"></script>
+  <script>
+    let currentProposal = null;
+    let activeVariantIndex = 0;
+    let remainingAttempts = 7;
+
+    // Detect Proposal Param from URL (e.g. ?id=205 or ?slug=kp-205-for-dmitriy-orlov)
+    function resolveCurrentProposal() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const idParam = urlParams.get('id') || urlParams.get('slug') || urlParams.get('kp');
+      
+      if (idParam) {
+        return getProposalByParam(idParam);
+      }
+      
+      // Check pathname (e.g. /kp/kp-205-for-dmitriy-orlov/)
+      const pathParts = window.location.pathname.split('/').filter(Boolean);
+      const lastSegment = pathParts[pathParts.length - 1];
+      if (lastSegment && lastSegment !== 'kp' && lastSegment !== 'index.html') {
+        const found = getProposalByParam(lastSegment);
+        if (found) return found;
+      }
+
+      // Default fallback to first proposal in database
+      const keys = Object.keys(KP_DATABASE);
+      return keys.length > 0 ? KP_DATABASE[keys[0]] : null;
+    }
+
+    currentProposal = resolveCurrentProposal();
+
+    // Elements
+    const pinGateView = document.getElementById('pinGateView');
+    const proposalView = document.getElementById('proposalView');
+    const pinInputs = Array.from(document.querySelectorAll('.pin-input'));
+    const pinErrorMessage = document.getElementById('pinErrorMessage');
+    const attemptsRemainingText = document.getElementById('attemptsRemainingText');
+
+    // Check Session Auth for this specific Proposal
+    function isProposalUnlocked(slug) {
+      return sessionStorage.getItem('kp_unlocked_' + slug) === 'true';
+    }
+
+    function setProposalUnlocked(slug) {
+      sessionStorage.setItem('kp_unlocked_' + slug, 'true');
+    }
+
+    // Auto Unlock if already entered PIN in this session
+    if (currentProposal && isProposalUnlocked(currentProposal.slug)) {
+      renderProposal(currentProposal);
+    }
+
+    // Pin Input Logic (Auto Focus Next, Backspace, Paste)
+    function getEnteredPin() {
+      return pinInputs.map(input => input.value).join('');
+    }
+
+    function verifyPin() {
+      if (!currentProposal) return;
+      const entered = getEnteredPin();
+      if (entered.length !== 5) return;
+
+      if (entered === currentProposal.pin) {
+        setProposalUnlocked(currentProposal.slug);
+        renderProposal(currentProposal);
+      } else {
+        remainingAttempts--;
+        pinErrorMessage.classList.remove('hidden');
+        attemptsRemainingText.textContent = `Осталось попыток: ${remainingAttempts}`;
+        
+        // Shake animation
+        pinGateView.classList.add('animate-pulse');
+        setTimeout(() => pinGateView.classList.remove('animate-pulse'), 500);
+
+        pinInputs.forEach(i => i.value = '');
+        pinInputs[0].focus();
+
+        if (remainingAttempts <= 0) {
+          document.getElementById('btnSubmitPin').disabled = true;
+          document.getElementById('btnSubmitPin').classList.add('opacity-50', 'cursor-not-allowed');
+          pinErrorMessage.textContent = 'Превышен лимит попыток. Свяжитесь с инженером для получения нового PIN.';
+        }
+      }
+    }
+
+    pinInputs.forEach((input, idx) => {
+      input.addEventListener('input', (e) => {
+        input.value = input.value.replace(/\D/g, '').slice(-1);
+        if (input.value && pinInputs[idx + 1]) {
+          pinInputs[idx + 1].focus();
+        }
+        if (getEnteredPin().length === 5) {
+          verifyPin();
+        }
+      });
+
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Backspace' && !input.value && pinInputs[idx - 1]) {
+          pinInputs[idx - 1].focus();
+        }
+      });
+
+      input.addEventListener('paste', (e) => {
+        e.preventDefault();
+        const text = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, 5);
+        text.split('').forEach((digit, i) => {
+          if (pinInputs[i]) pinInputs[i].value = digit;
+        });
+        const next = pinInputs.find(i => i.value === '');
+        (next || pinInputs[4]).focus();
+        if (getEnteredPin().length === 5) {
+          verifyPin();
+        }
+      });
+    });
+
+    document.getElementById('pinForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      verifyPin();
+    });
+
+    // Render Proposal
+    function renderProposal(kp) {
+      pinGateView.classList.add('hidden');
+      proposalView.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      document.title = `КП №КП-${kp.id} · РОБОСТОК · ${kp.clientName}`;
+
+      document.getElementById('kpTitleDisplay').innerHTML = `Коммерческое предложение <span class="text-[var(--accent)]">№КП-${kp.id}</span>`;
+      document.getElementById('kpNumberDisplay').textContent = `№КП-${kp.id}`;
+      document.getElementById('kpClientName').textContent = kp.clientName;
+      document.getElementById('kpClientObject').textContent = kp.clientObject;
+
+      // Status date formatting
+      const dateParts = (kp.validUntil || '2026-09-10').split('-');
+      const months = ['', 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+      const dateFormatted = dateParts.length === 3 ? `${parseInt(dateParts[2])} ${months[parseInt(dateParts[1])]} ${dateParts[0]}` : kp.validUntil;
+      document.getElementById('kpStatusBadge').textContent = `КП актуально до ${dateFormatted}`;
+
+      // Manager details
+      if (kp.manager) {
+        document.getElementById('kpManagerName').textContent = kp.manager.name;
+        document.getElementById('kpManagerPhoneDisplay').textContent = kp.manager.phoneDisplay;
+        document.getElementById('kpManagerPhoneFooter').textContent = kp.manager.phoneDisplay;
+        document.getElementById('kpManagerPhoneFooter').href = `tel:${kp.manager.phoneTel}`;
+        document.getElementById('btnQuestionTg').href = `https://t.me/killa_xx?text=${encodeURIComponent('Здравствуйте, Дмитрий! Вопрос по КП №КП-' + kp.id + ' (' + kp.clientName + ')')}`;
+      }
+
+      // Variant Tabs
+      const tabsContainer = document.getElementById('variantTabsContainer');
+      tabsContainer.innerHTML = '';
+      if (kp.variants && kp.variants.length > 1) {
+        kp.variants.forEach((v, idx) => {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `py-2 px-4 rounded-lg text-xs font-bold border transition-colors ${idx === activeVariantIndex ? 'bg-primary text-white border-primary' : 'bg-[var(--bg-elevated)] border-[var(--border-color)] text-[var(--text-main)] hover:border-[var(--accent)]'}`;
+          btn.textContent = v.title;
+          btn.addEventListener('click', () => {
+            activeVariantIndex = idx;
+            renderVariant(kp.variants[idx]);
+            renderProposal(kp);
+          });
+          tabsContainer.appendChild(btn);
+        });
+      }
+
+      renderVariant(kp.variants[activeVariantIndex] || kp.variants[0]);
+    }
+
+    function renderVariant(variant) {
+      if (!variant) return;
+
+      document.getElementById('variantTitleDisplay').textContent = variant.title;
+      document.getElementById('variantDescDisplay').textContent = variant.description || '';
+
+      const tableBody = document.getElementById('kpItemsTableBody');
+      tableBody.innerHTML = '';
+
+      let grandTotal = 0;
+
+      variant.items.forEach((item, index) => {
+        const sum = item.sum || (item.price * item.qty);
+        grandTotal += sum;
+
+        const row = document.createElement('tr');
+        row.className = index % 2 === 0 ? 'bg-[var(--bg-surface)]' : 'bg-[var(--bg-elevated)]/40';
+        row.innerHTML = `
+          <td class="py-3 px-3 text-center font-data font-bold text-[var(--text-muted)]">${item.num || (index + 1)}</td>
+          <td class="py-3 px-4">
+            <strong class="text-[var(--text-main)] block font-bold mb-0.5 text-xs sm:text-sm">${item.name}</strong>
+            <span class="text-[var(--text-muted)] text-[11px] leading-relaxed block">${item.desc || ''}</span>
+          </td>
+          <td class="py-3 px-3 text-center font-data font-bold text-[var(--text-main)]">${item.qty} ${item.unit || 'шт.'}</td>
+          <td class="py-3 px-3 text-right font-data font-medium text-[var(--text-muted)] whitespace-nowrap">${(item.price || 0).toLocaleString('ru-RU')} ₽</td>
+          <td class="py-3 px-4 text-right font-data font-extrabold text-[var(--text-main)] whitespace-nowrap">${sum.toLocaleString('ru-RU')} ₽</td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      document.getElementById('kpGrandTotalDisplay').textContent = `${grandTotal.toLocaleString('ru-RU')} ₽`;
+
+      if (variant.terms) {
+        if (variant.terms.deliveryTime) document.getElementById('termDelivery').textContent = variant.terms.deliveryTime;
+        if (variant.terms.paymentTerms) document.getElementById('termPayment').textContent = variant.terms.paymentTerms;
+      }
+
+      if (variant.engineerNotes) {
+        document.getElementById('kpEngineerNotesDisplay').textContent = variant.engineerNotes;
+      }
+    }
+
+    // Modal Handlers
+    const orderModal = document.getElementById('orderModal');
+    const btnAcceptOffer = document.getElementById('btnAcceptOffer');
+    const btnCloseOrderModal = document.getElementById('btnCloseOrderModal');
+
+    btnAcceptOffer.addEventListener('click', () => {
+      if (currentProposal) {
+        document.getElementById('orderClientName').value = currentProposal.clientName || '';
+        document.getElementById('orderClientPhone').value = currentProposal.clientPhone || '';
+        document.getElementById('orderClientAddress').value = currentProposal.clientObject || '';
+      }
+      orderModal.classList.remove('hidden');
+    });
+
+    btnCloseOrderModal.addEventListener('click', () => {
+      orderModal.classList.add('hidden');
+    });
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('orderClientName').value;
+      const phone = document.getElementById('orderClientPhone').value;
+      const addr = document.getElementById('orderClientAddress').value;
+
+      document.getElementById('orderForm').classList.add('hidden');
+      document.getElementById('orderSuccessMessage').classList.remove('hidden');
+
+      // Send beacon / notify engineer
+      const msg = `🔔 *Заказ по КП №КП-${currentProposal ? currentProposal.id : ''}*\nКлиент: ${name}\nТелефон: ${phone}\nОбъект: ${addr}`;
+      console.log('Order submitted:', msg);
+    }
+
+    // Creator Modal Handlers
+    const creatorModal = document.getElementById('creatorModal');
+    const btnOpenCreator = document.getElementById('btnOpenCreator');
+    const btnCloseCreatorModal = document.getElementById('btnCloseCreatorModal');
+
+    btnOpenCreator.addEventListener('click', () => {
+      creatorModal.classList.remove('hidden');
+      // Set default valid date (+10 days)
+      const d = new Date();
+      d.setDate(d.getDate() + 10);
+      document.getElementById('crKpValidUntil').value = d.toISOString().split('T')[0];
+      // Random 5-digit PIN
+      document.getElementById('crKpPin').value = Math.floor(10000 + Math.random() * 90000);
+    });
+
+    btnCloseCreatorModal.addEventListener('click', () => {
+      creatorModal.classList.add('hidden');
+    });
+
+    function addCreatorItemRow() {
+      const container = document.getElementById('creatorItemsList');
+      const div = document.createElement('div');
+      div.className = 'cr-item-row p-3 rounded bg-[var(--bg-elevated)] border border-[var(--border-color)] space-y-2';
+      div.innerHTML = `
+        <div class="grid grid-cols-12 gap-2">
+          <input type="text" class="col-span-7 px-2.5 py-1.5 text-xs rounded border border-[var(--border-color)] cr-item-name" placeholder="Название оборудования" required/>
+          <input type="number" class="col-span-2 px-2 py-1.5 text-xs rounded border border-[var(--border-color)] cr-item-qty text-center font-data" placeholder="Кол-во" value="1" required/>
+          <input type="number" class="col-span-3 px-2 py-1.5 text-xs rounded border border-[var(--border-color)] cr-item-price text-right font-data" placeholder="Цена (₽)" required/>
+        </div>
+        <div class="flex gap-2 items-center">
+          <textarea class="flex-1 px-2.5 py-1 text-xs rounded border border-[var(--border-color)] cr-item-desc" rows="1" placeholder="Инженерное описание"></textarea>
+          <button type="button" onclick="this.closest('.cr-item-row').remove()" class="text-red-500 hover:text-red-700 p-1">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </div>
+      `;
+      container.appendChild(div);
+    }
+
+    function handleCreateKp(e) {
+      e.preventDefault();
+      const num = document.getElementById('crKpNumber').value.trim();
+      const pin = document.getElementById('crKpPin').value.trim();
+      const validUntil = document.getElementById('crKpValidUntil').value;
+      const clientName = document.getElementById('crClientName').value.trim();
+      const clientObject = document.getElementById('crClientObject').value.trim();
+      const engineerNotes = document.getElementById('crEngineerNotes').value.trim();
+
+      const itemRows = document.querySelectorAll('.cr-item-row');
+      const items = [];
+      itemRows.forEach((row, i) => {
+        const name = row.querySelector('.cr-item-name').value.trim();
+        const qty = parseInt(row.querySelector('.cr-item-qty').value, 10) || 1;
+        const price = parseInt(row.querySelector('.cr-item-price').value, 10) || 0;
+        const desc = row.querySelector('.cr-item-desc').value.trim();
+        if (name) {
+          items.push({ num: i + 1, name, desc, qty, unit: 'шт.', price, sum: qty * price });
+        }
+      });
+
+      const slug = `kp-${num}-for-${clientName.toLowerCase().replace(/[^a-zа-я0-9]/gi, '-')}`;
+
+      const newKp = {
+        id: num,
+        slug: slug,
+        pin: pin,
+        clientName: clientName,
+        clientObject: clientObject,
+        createdDate: new Date().toISOString().split('T')[0],
+        validUntil: validUntil,
+        status: 'active',
+        variants: [{
+          id: 'var-1',
+          title: `Вариант 1 (Инженерный расчет)`,
+          description: clientObject,
+          items: items,
+          terms: {
+            deliveryTime: 'В наличии (монтаж за 1 день)',
+            paymentTerms: '50% аванс по договору / 50% после проверки под нагрузкой'
+          },
+          engineerNotes: engineerNotes
+        }],
+        manager: {
+          name: 'Дмитрий Орлов',
+          role: 'Ведущий инженер / Руководитель РОБОСТОК',
+          phoneDisplay: '+7 985 674 75 74',
+          phoneTel: '+798****7574',
+          telegramUser: '@killa_xx',
+          telegramLink: 'https://t.me/killa_xx'
+        }
+      };
+
+      // Save to database object in memory & localStorage
+      KP_DATABASE[slug] = newKp;
+      KP_DATABASE[num] = newKp;
+      try {
+        localStorage.setItem('custom_kp_' + slug, JSON.stringify(newKp));
+      } catch(err) {}
+
+      // Generate message template
+      const baseUrl = window.location.origin + window.location.pathname.replace(/\/index\.html$/, '');
+      const kpUrl = `${baseUrl}?id=${num}`;
+
+      const messageTemplate = `${clientName},
+
+По Вашему запросу подготовлено коммерческое предложение, которое доступно по адресу:
+${kpUrl}
+
+Для доступа к КП введите пин-код из 5 цифр:
+${pin}
+
+С уважением,
+Дмитрий Орлов · РОБОСТОК
++7 985 674 75 74
+Telegram: @killa_xx`;
+
+      document.getElementById('creatorMessageTemplate').value = messageTemplate;
+      document.getElementById('creatorResultBox').classList.remove('hidden');
+
+      document.getElementById('btnPreviewNewKp').onclick = () => {
+        creatorModal.classList.add('hidden');
+        currentProposal = newKp;
+        setProposalUnlocked(newKp.slug);
+        renderProposal(newKp);
+      };
+    }
+
+    function copyCreatorTemplate() {
+      const textarea = document.getElementById('creatorMessageTemplate');
+      textarea.select();
+      navigator.clipboard.writeText(textarea.value);
+      alert('Текст скопирован в буфер обмена! Теперь его можно отправить клиенту.');
+    }
+  </script>
+</body>
+</html>
