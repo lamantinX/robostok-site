@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>РОБОСТОК — Портал оператора B2B | Доступ для Сергея</title>
+<style>
+:root {
+  --paper: #F7F6F2;
+  --ink: #20313A;
+  --teal: #2F6F68;
+  --teal-dark: #22514c;
+  --line: #D6DED8;
+  --muted: #53666C;
+  --soft: #E6EEE8;
+  --accent: #F7D2B9;
+  --white: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --danger: #c53030;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  color: var(--ink);
+}
+.brand span { color: var(--teal); }
+.badge {
+  background: var(--soft);
+  color: var(--teal-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* PIN GATE VIEW */
+#pinGate {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.pin-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 36px 28px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(32, 49, 58, 0.05);
+}
+.pin-card h1 {
+  font-size: 24px;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+.pin-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 24px;
+}
+.pin-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 18px;
+  letter-spacing: .15em;
+  text-align: center;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--paper);
+  transition: border-color .2s;
+}
+.pin-input:focus {
+  border-color: var(--teal);
+  background: var(--white);
+}
+.pin-btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+}
+.pin-btn:hover { background: var(--teal-dark); }
+.pin-error {
+  color: var(--danger);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 12px;
+  display: none;
+}
+
+/* PORTAL CONTENT (hidden by default) */
+#portalContent {
+  display: none;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+.hero {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  color: var(--white);
+  padding: 36px 32px;
+  border-radius: 18px;
+  margin-bottom: 32px;
+}
+.hero h1 {
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+.hero p {
+  font-size: 17px;
+  opacity: .92;
+  margin: 0 0 20px;
+  max-width: 700px;
+}
+.hero-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.stat-pill {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.stat-pill strong {
+  display: block;
+  font-size: 20px;
+  color: var(--accent);
+}
+.stat-pill span {
+  font-size: 13px;
+  opacity: .85;
+}
+
+.section-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+.section-card h2 {
+  font-size: 22px;
+  margin: 0 0 16px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--teal);
+  font-weight: 800;
+  font-size: 16px;
+}
+
+/* CALC */
+.calc-box {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.calc-slider {
+  width: 100%;
+  margin: 16px 0;
+}
+.calc-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.calc-big {
+  font-size: 32px;
+  font-weight: 850;
+  color: var(--teal-dark);
+}
+
+/* SCRIPT BOXES */
+.script-step {
+  border-left: 3px solid var(--teal);
+  padding-left: 18px;
+  margin-bottom: 22px;
+}
+.script-step h3 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: var(--teal);
+}
+.quote-box {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: var(--ink);
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* OBJECTIONS GRID */
+.obj-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 700px) {
+  .obj-grid { grid-template-columns: 1fr; }
+}
+.obj-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+.obj-card strong {
+  display: block;
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.obj-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* LEAD CARD TEMPLATE */
+.template-box {
+  background: #20313A;
+  color: #E6EEE8;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 13px;
+  padding: 18px;
+  border-radius: 12px;
+  position: relative;
+  white-space: pre-wrap;
+}
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.copy-btn:hover { background: var(--teal-dark); }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">РОБОСТОК<span> ●</span> B2B</div>
+  <div class="badge">Внутренний доступ: Сергей</div>
+</header>
+
+<!-- 1. PIN GATE VIEW -->
+<div id="pinGate">
+  <div class="pin-card">
+    <h1>Вход в рабочий портал</h1>
+    <p>Введите персональный пин-код для доступа к регламентам, скриптам и расчёту выплат.</p>
+    <form id="pinForm" onsubmit="handlePinSubmit(event)">
+      <input type="password" id="pinInput" class="pin-input" placeholder="Введите PIN" autocomplete="off" autofocus>
+      <button type="submit" class="pin-btn">Войти в портал</button>
+      <div id="pinError" class="pin-error">Неверный PIN-код. Проверьте правильность ввода.</div>
+    </form>
+  </div>
+</div>
+
+<!-- 2. PORTAL CONTENT -->
+<main id="portalContent">
+
+  <div class="hero">
+    <h1>Сергей, добро пожаловать в РОБОСТОК</h1>
+    <p>Это не просто «звонки по холодной базе». Ты продаёшь владельцам клиник защиту их дневной кассы и репутации. Никакого впаривания коробок — мы продаём бесплатный 20-минутный замер инженера.</p>
+    <div class="hero-stats">
+      <div class="stat-pill">
+        <strong>5% с чека</strong>
+        <span>Твоя прямая комиссия</span>
+      </div>
+      <div class="stat-pill">
+        <strong>20 000 – 30 000 ₽</strong>
+        <span>С одной закрытой клиники</span>
+      </div>
+      <div class="stat-pill">
+        <strong>0 ₽ для клиента</strong>
+        <span>Бесплатный выездной замер</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- БЛОК 1: МАТЕМАТИКА ДЕНЕГ -->
+  <section class="section-card">
+    <h2><span class="icon">₽</span> Твоя математика дохода: без иллюзий и сказок</h2>
+    <p>Давай считать на калькуляторе, как взрослые люди. Мы не обещаем миллионы из воздуха за два дня. Мы даём понятную, твёрдую схему, где каждый успешный замер приносит тебе реальные деньги на руки.</p>
+
+    <div class="calc-box">
+      <label for="dealsRange"><strong>Сколько клиник закрываем в месяц: <span id="dealsCount" style="color:var(--teal); font-size:20px;">5</span></strong></label>
+      <input type="range" id="dealsRange" class="calc-slider" min="1" max="10" value="5" oninput="updateCalc(this.value)">
+      
+      <div class="calc-result">
+        <div>
+          <div style="font-size:13px; color:var(--muted);">Ориентировочный оборот сделок:</div>
+          <div id="totalVolume" style="font-weight:700; font-size:18px;">2 000 000 ₽</div>
+        </div>
+        <div>
+          <div style="font-size:13px; color:var(--muted);">Нужно согласовать замеров:</div>
+          <div id="surveysCount" style="font-weight:700; font-size:18px;">12–15 замеров</div>
+        </div>
+        <div>
+          <div style="font-size:13px; color:var(--muted);">ТВОЙ ЧИСТЫЙ ДОХОД (5%):</div>
+          <div id="sergeyIncome" class="calc-big">100 000 ₽</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:14px; color:var(--muted); margin:0;">
+      *Расчет основан на среднем чеке комплекта 400 000 ₽ (инвертор 5 кВт + LiFePO4 батарея 5.12 кВт·ч + монтаж критичной линии). При закрытии 5 объектов ты забираешь 100 000 ₽. Сделаешь 8 объектов — заберёшь 160 000 ₽. Когда подтвердим поток — подключаем дополнительные бригады монтажников и масштабируем объём.
+    </p>
+  </section>
+
+  <!-- БЛОК 2: МАТЧАСТЬ -->
+  <section class="section-card">
+    <h2><span class="icon">⚡</span> Матчасть: почему клиенты соглашаются на замер</h2>
+    <p>Чтобы главврач слушал тебя с открытым ртом, ты должен понимать его реальность лучше, чем он сам. Вот три железобетонных факта:</p>
+
+    <div style="display:flex; flex-direction:column; gap:12px; margin-top:16px;">
+      <div style="background:var(--soft); padding:14px 18px; border-radius:10px;">
+        <strong style="color:var(--teal-dark);">1. Генератор на улице для них — это ад и запрет</strong>
+        <p style="margin:4px 0 0; font-size:14px;">90% частных клиник находятся на 1 этаже жилого дома. Выкатить тарахтящий генератор на тротуар нельзя: жильцы жалуются на вонь и грохот, а пожарные выписывают предписания за канистры с бензином. Им жизненно необходим бесшумный резерв внутри помещения.</p>
+      </div>
+      <div style="background:var(--soft); padding:14px 18px; border-radius:10px;">
+        <strong style="color:var(--teal-dark);">2. Дешёвые ИБП сгорают от пускового тока компрессора</strong>
+        <p style="margin:4px 0 0; font-size:14px;">Безмасляный медицинский компрессор при старте берёт импульс в 4–6 раз выше номинала (до 25–35 Ампер). Обычные компьютерные бесперебойники сразу уходят в глухую аварию. РОБОСТОК рассчитывает инверторы с 2-кратным перегрузочным запасом именно под компрессоры.</p>
+      </div>
+      <div style="background:var(--soft); padding:14px 18px; border-radius:10px;">
+        <strong style="color:var(--teal-dark);">3. Схема оплаты 50/50 убирает любой страх обмана</strong>
+        <p style="margin:4px 0 0; font-size:14px;">Клиент платит 50% аванса за железо, а оставшиеся 50% — строго после того, как наш инженер Володя в присутствии владельца щёлкнет городским рубильником, и компрессор продолжит качать воздух без остановки.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК 3: БОЕВОЙ СКРИПТ -->
+  <section class="section-card">
+    <h2><span class="icon">📞</span> Боевой скрипт звонка (слово в слово)</h2>
+
+    <div class="script-step">
+      <h3>Шаг 1. Проход секретаря (без продаж и спама)</h3>
+      <p style="font-size:14px; margin:0 0 6px;">Говорим спокойно, уверенно, как проверяющий инженер:</p>
+      <div class="quote-box">
+        «Добрый день. Соедините с главным врачом или управляющим по вопросу энергобезопасности кабинетов при отключениях света. Это инженерная служба РОБОСТОК, Дмитрий просил связаться касательно замеров нагрузок оборудования».
+      </div>
+    </div>
+
+    <div class="script-step">
+      <h3>Шаг 2. Заход к ЛПР через факт последнего сбоя</h3>
+      <div class="quote-box">
+        «[Имя Отчество], здравствуйте. Меня зовут Сергей, компания РОБОСТОК. Мы сейчас работаем по объектам в вашем районе — защищаем критическое оборудование стоматологий от аварийных отключений. Подскажите, когда у вас в последний раз пропадал свет посреди рабочего дня — как выходили из ситуации с пациентами в кресле?»
+      </div>
+    </div>
+
+    <div class="script-step">
+      <h3>Шаг 3. Вскрытие проблемы генератора</h3>
+      <div class="quote-box">
+        «А уличный генератор у вас есть возможность поставить, или жильцы дома и пожарные нормы не позволяют шуметь и выхлоп пускать?»
+      </div>
+    </div>
+
+    <div class="script-step">
+      <h3>Шаг 4. Продажа бесплатного выездного замера</h3>
+      <div class="quote-box">
+        «Понял вас. Мы как раз монтируем бесшумные накопители прямо в щитовую. Они переключаются за доли секунды — компрессор и кресло даже не замечают блэкаута.<br><br>
+        Чтобы вы не переплачивали за лишнюю мощность, наш инженер Владимир бесплатно подъедет к вам на 20 минут с токовыми клещами, снимет реальные пусковые токи компрессора и посмотрит щиток. После этого мы дадим точный расчёт сметы под ключ. Выезд вас ни к чему не обязывает. На какой день удобнее согласовать — на завтра или послезавтра?»
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК 4: ВОЗРАЖЕНИЯ -->
+  <section class="section-card">
+    <h2><span class="icon">🛡️</span> Отработка типовых возражений</h2>
+    
+    <div class="obj-grid">
+      <div class="obj-card">
+        <strong>«Сбросьте ваше КП на почту»</strong>
+        <p>«[Имя], сбросить типовой прайс — это путь в никуда. В прайсе железки, а вам нужно, чтобы компрессор запустился. Без замера пускового тока вашего компрессора любая цифра будет наугад. Давайте инженер заскочит на 15 минут, снимет параметры, и мы дадим точную смету под ваш щит. Завтра в первой половине будете на месте?»</p>
+      </div>
+      <div class="obj-card">
+        <strong>«У нас уже есть генератор»</strong>
+        <p>«Отлично, что о резерве подумали! А генератор заведен в общий щит с автоматикой, или по кабинету удлинители тянутся? Компрессор установка тянет при старте без сбоя электроники? Давайте инженер проверит совместимость и падение напряжения под нагрузкой, это бесплатно».</p>
+      </div>
+      <div class="obj-card">
+        <strong>«Это очень дорого, нет денег»</strong>
+        <p>«Именно поэтому мы не предлагаем резервировать всю клинику с кондиционерами и чайниками за миллион. Мы замеряем и выделяем в щите только линию кресла и компрессора. Это снижает цену в 2–3 раза. Плюс оплата 50 на 50 — второй платёж только после проверки работы под нагрузкой».</p>
+      </div>
+      <div class="obj-card">
+        <strong>«У нас свет почти не выключают»</strong>
+        <p>«Вам повезло с подстанцией! А если авария случится прямо во время сложной хирургии или пломбирования композитом — есть регламент, или приём срывается? Лучше иметь готовый расчёт до аварии, чем в панике искать варианты потом. Давайте просто снимем параметры щита».</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЛОК 5: ШАБЛОН ПЕРЕДАЧИ ЛИДА -->
+  <section class="section-card">
+    <h2><span class="icon">📋</span> Как передавать согласованный замер Дмитрию</h2>
+    <p>Каждый согласованный выезд отправляй Дмитрию в Telegram (<a href="https://t.me/killa_xx" target="_blank" style="color:var(--teal); font-weight:700;">@killa_xx</a>) по этому шаблону. Вместе с карточкой прикрепляй аудиозапись звонка.</p>
+
+    <div class="template-box" id="leadTemplate">🔥 НОВЫЙ ЗАМЕР РОБОСТОК
+
+1. Клиника: Стоматология «[Название]»
+2. Адрес: г. Донецк, ул. [Улица, дом]
+3. ЛПР: [ФИО, должность — например: Иван Иванович, главврач]
+4. Телефон ЛПР: +7 [номер]
+5. Оборудование: [Количество кресел, модель/мощность компрессора, если известна]
+6. Проблема: [Свет гаснет 2 раза в неделю, генератор жильцы запретили]
+7. Согласованное время замера: [Дата, время — например: 15 сентября, 11:30]
+8. Запись звонка: [файл прикреплен]</div>
+    <button type="button" class="copy-btn" onclick="copyTemplate()">Скопировать шаблон</button>
+  </section>
+
+</main>
+
+<footer>
+  РОБОСТОК · Внутренний портал коммерческой группы · 2026
+</footer>
+
+<script>
+// PIN AUTH LOGIC
+const CORRECT_PIN = "sereban";
+
+function checkAuth() {
+  if (sessionStorage.getItem("robostok_auth") === "true") {
+    showPortal();
+  }
+}
+
+function handlePinSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById("pinInput");
+  const error = document.getElementById("pinError");
+  const val = input.value.trim().toLowerCase();
+
+  if (val === CORRECT_PIN) {
+    sessionStorage.setItem("robostok_auth", "true");
+    showPortal();
+  } else {
+    error.style.display = "block";
+    input.value = "";
+    input.focus();
+  }
+}
+
+function showPortal() {
+  document.getElementById("pinGate").style.display = "none";
+  document.getElementById("portalContent").style.display = "block";
+  window.scrollTo(0, 0);
+}
+
+// CALC LOGIC
+function updateCalc(val) {
+  const deals = parseInt(val, 10);
+  document.getElementById("dealsCount").innerText = deals;
+  
+  const totalVol = deals * 400000;
+  document.getElementById("totalVolume").innerText = totalVol.toLocaleString("ru-RU") + " ₽";
+  
+  const minSurveys = Math.round(deals * 2.5);
+  const maxSurveys = Math.round(deals * 3);
+  document.getElementById("surveysCount").innerText = `${minSurveys}–${maxSurveys} замеров`;
+  
+  const income = Math.round(totalVol * 0.05);
+  document.getElementById("sergeyIncome").innerText = income.toLocaleString("ru-RU") + " ₽";
+}
+
+// COPY TEMPLATE
+function copyTemplate() {
+  const text = document.getElementById("leadTemplate").innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(".copy-btn");
+    btn.innerText = "Скопировано!";
+    setTimeout(() => btn.innerText = "Скопировать шаблон", 2000);
+  });
+}
+
+// Init
+checkAuth();
+</script>
+
+</body>
+</html>
