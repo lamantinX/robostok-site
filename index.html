@@ -6,7 +6,7 @@
   <title>РОБОСТОК · Автономное электропитание и зарядные станции под ключ</title>
   
   <!-- SEO, GEO & AI Search Metadata -->
-  <meta name="description" content="РОБОСТОК — 100% защита от отключений электроэнергии для бизнеса и частных домов. Инженерный подбор оборудования под ваши реальные нагрузки, монтаж в электрощит за 1 день, официальный договор и оплата 50% только после теста под нагрузкой."/>
+  <meta name="description" content="РОБОСТОК — инженерный подбор и монтаж систем автономного и резервного электропитания для частных домов и бизнеса. Замер пусковых токов клещами, официальный договор и оплата 50% только после проверки под нагрузкой."/>
   <meta name="keywords" content="РОБОСТОК, автономное питание под ключ, гибридный инвертор, LiFePO4 аккумуляторы, ИБП для дома, ИБП для котла, Pecron E3800, PECRON F5000, Deye, Донецк, Ростов, Москва"/>
   <meta name="author" content="РОБОСТОК"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
@@ -16,6 +16,15 @@
   <meta name="geo.placename" content="Донецк, Ростов-на-Дону, Москва"/>
   <meta name="geo.position" content="48.015883;37.802850"/>
   <meta name="ICBM" content="48.015883, 37.802850"/>
+
+    <link rel="canonical" href="https://robostok.ru/"/>
+  <link rel="alternate" type="text/markdown" title="LLMs Context" href="https://robostok.ru/llms.txt"/>
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="РОБОСТОК · Бесперебойное электропитание без шума и бензина"/>
+  <meta name="twitter:description" content="Инженерный подбор и монтаж систем автономного питания под ключ. Оплата 50% только после проверки под нагрузкой."/>
+  <meta name="twitter:image" content="https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png"/>
 
   <!-- OpenGraph -->
   <meta property="og:type" content="website"/>
@@ -28,64 +37,221 @@
 
   <!-- JSON-LD Structured Data (Schema.org) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://robostok.ru/#organization",
-        "name": "РОБОСТОК",
-        "alternateName": "РОБОСТОК Энергия и Автоматика",
-        "url": "https://robostok.ru",
-        "logo": "https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png",
-        "description": "Интегратор решений автономного электропитания, гибридных инверторных систем и литий-железо-фосфатных аккумуляторов под ключ.",
-        "telephone": "+7-985-674-75-74",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "RU",
-          "addressLocality": "Донецк",
-          "streetAddress": "ул. Артема, д. 1"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://robostok.ru/#organization",
+      "name": "РОБОСТОК",
+      "alternateName": [
+        "РОБОСТОК Энергия и Автоматика",
+        "Robostok",
+        "ИП Орлов Д.В."
+      ],
+      "url": "https://robostok.ru",
+      "logo": "https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png",
+      "image": "https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png",
+      "description": "Инженерный интегратор систем автономного и резервного электропитания, гибридных инверторов Sunways/Deye, накопителей LiFePO4 и зарядных станций Pecron под ключ в России и ДНР.",
+      "telephone": "+7-985-674-75-74",
+      "email": "robostok@bk.ru",
+      "priceRange": "₽₽₽",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "08:00",
+          "closes": "21:00"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RU",
+        "addressLocality": "Донецк",
+        "streetAddress": "ул. Артема, д. 1"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 48.015883,
+        "longitude": 37.80285
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Донецкая Народная Республика"
         },
-        "founder": {
-          "@type": "Person",
-          "name": "Дмитрий Орлов"
+        {
+          "@type": "AdministrativeArea",
+          "name": "Ростовская область"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Москва и Московская область"
+        },
+        {
+          "@type": "Country",
+          "name": "Россия"
         }
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Дмитрий Орлов"
       },
-      {
-        "@type": "Product",
-        "@id": "https://robostok.ru/#product-rezerv-6kw",
-        "name": "Комплекс бесперебойного питания «Народный Резерв» 6.2 кВт Под Ключ",
-        "image": "https://robostok.ru/assets/01_cover_ctr_hit_narodny_rezerv_6_2kw.png",
-        "description": "Комплекс энергонезависимости: гибридный инвертор Sunways 6.2 кВт (пик 12 кВт), LiFePO4 5.12 кВт·ч, щит автоматического ввода резерва 0–10 мс, монтаж по ГОСТ под ключ.",
-        "brand": {
-          "@type": "Brand",
-          "name": "РОБОСТОК"
-        }
+      "knowsAbout": [
+        "Автономное электроснабжение",
+        "Резервное питание для дома",
+        "Гибридные инверторы Deye и Sunways",
+        "Литий-железо-фосфатные аккумуляторы LiFePO4",
+        "Солнечные электростанции (СЭС)",
+        "Автоматический ввод резерва (АВР)",
+        "Инструментальный замер пусковых токов"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://robostok.ru/#website",
+      "url": "https://robostok.ru",
+      "name": "РОБОСТОК · Автономное энергоснабжение под ключ",
+      "publisher": {
+        "@id": "https://robostok.ru/#organization"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://robostok.ru/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Как формируется стоимость системы?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Стоимость рассчитывается индивидуально после выезда инженера и точного замера пусковых токов вашего оборудования. Мы подбираем систему строго под ваши задачи, чтобы вы не переплачивали за лишнюю мощность."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Как происходит оплата?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Оплата делится на два этапа: 50% аванс по официальному договору для резервирования оборудования, и 50% вы оплачиваете только после завершения монтажа, проведения теста под реальной нагрузкой и подписания акта сдачи-приемки."
-            }
-          }
-        ]
+      "inLanguage": "ru-RU"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://robostok.ru/#service-rezerv-life",
+      "name": "Комплекс бесперебойного питания «Резерв Жизнеобеспечения» 3.6 кВт",
+      "provider": {
+        "@id": "https://robostok.ru/#organization"
+      },
+      "serviceType": "Установка и монтаж систем резервного питания",
+      "description": "Автономное питание газовых и пеллетных котлов, циркуляционных насосов, роутера и дежурного освещения на 16–24 часа. Инвертор 3.6 кВт с чистым синусом + LiFePO4 5.12 кВт·ч, байпас сети и УЗИП.",
+      "areaServed": {
+        "@id": "https://robostok.ru/#organization"
+      },
+      "termsOfService": "50% аванс по договору, 50% после теста под реальной нагрузкой"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://robostok.ru/#service-polny-komfort",
+      "name": "Комплекс энергонезависимости коттеджа «Полный Комфорт» 6 кВт",
+      "provider": {
+        "@id": "https://robostok.ru/#organization"
+      },
+      "serviceType": "Бесшовное резервное электроснабжение дома",
+      "description": "Питание дома со скважинным насосом, септиком и холодильниками на 12–20 часов. Инвертор Deye 6 кВт / Pecron F5000 с пусковым запасом до 12 кВт + LiFePO4 10–15 кВт·ч.",
+      "areaServed": {
+        "@id": "https://robostok.ru/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://robostok.ru/#service-autonomia-max",
+      "name": "Гибридный комплекс с автозапуском генератора «Автономия Макс» 8–12 кВт",
+      "provider": {
+        "@id": "https://robostok.ru/#organization"
+      },
+      "serviceType": "Автономные энергосистемы для коттеджей и бизнеса",
+      "description": "Инвертор Deye 8–12 кВт (1Ф/3Ф) + АКБ стойка 15–20 кВт·ч + модуль согласования с генератором заказчика. Автозапуск генератора только на 2–3 часа для подзарядки, экономия топлива до 80%.",
+      "areaServed": {
+        "@id": "https://robostok.ru/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://robostok.ru/#service-energy-audit",
+      "name": "Инженерный энергоаудит и замер пусковых токов клещами",
+      "provider": {
+        "@id": "https://robostok.ru/#organization"
+      },
+      "serviceType": "Инженерно-диагностический выезд",
+      "description": "Инструментальный замер пусковых токов электрооборудования клещами, проверка фазных перекосов щита и расчет точной сметы оборудования без навязывания лишней мощности.",
+      "areaServed": {
+        "@id": "https://robostok.ru/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://robostok.ru/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Как формируется стоимость оборудования и монтажа?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость рассчитывается индивидуально после выезда инженера и точного инструментального замера пусковых токов вашего оборудования токовыми клещами. Мы подбираем мощность инвертора и емкость батарей строго под ваши реальные нагрузки, чтобы вы не переплачивали."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как происходит оплата?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оплата делится на два этапа: 50% аванс по официальному договору для резервирования и комплектации оборудования, и вторые 50% вы оплачиваете строго после завершения монтажа, проведения теста под реальной нагрузкой и подписания акта сдачи-приемки."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает монтаж системы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стандартный монтаж системы резервного питания в готовый электрощит занимает от 4 до 8 часов (1 рабочий день) без разрушения отделки и штробления стен."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Чем инверторная система лучше бензинового генератора?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Инверторная система переключается за 4–10 мс без моргания света и сбоя автоматики котла или ПК, работает без выхлопа и запаха бензина, не требует регулярного сервиса ДВС, а расчетный ресурс ячеек LiFePO4 составляет 6000+ циклов."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://robostok.ru/#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://robostok.ru/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Конфигурации",
+          "item": "https://robostok.ru/#configurations"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Калькулятор",
+          "item": "https://robostok.ru/#calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Вопросы и ответы",
+          "item": "https://robostok.ru/#faq"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <!-- Fonts & Material Symbols -->
@@ -222,11 +388,13 @@
     </a>
 
     <!-- Nav Links -->
-    <div class="hidden lg:flex gap-6 items-center text-xs font-semibold">
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#comparison">Сравнение с генератором</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#protocol">Регламент замера</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#configurations">Готовые комплексы</a>
-      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#guarantee">Гарантия 50/50</a>
+    <div class="hidden lg:flex gap-5 items-center text-xs font-semibold">
+      <a class="text-[var(--accent)] font-bold hover:underline" href="/rezervnoe-pitanie-doma/">Для дома</a>
+      <a class="text-[var(--accent)] font-bold hover:underline" href="/rezervnoe-pitanie-dlya-biznesa/">Для бизнеса</a>
+      <a class="text-[var(--accent)] font-bold hover:underline" href="/solnechnye-elektrostancii-pod-klyuch/">Солнечные СЭС</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#comparison">Сравнение</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#protocol">Регламент</a>
+      <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#configurations">Комплексы</a>
       <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#calculator">Калькулятор</a>
       <a class="text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" href="#faq">FAQ</a>
     </div>
@@ -257,13 +425,13 @@
     
     <div class="control-card px-3.5 py-1.5 rounded inline-flex items-center gap-2 mb-6 border-amber-500/40">
       <span class="w-2 h-2 rounded-full bg-amber-500 pulse-status"></span>
-      <span class="font-data text-[11px] text-amber-600 dark:text-amber-400 uppercase tracking-wider font-bold">Выезд инженера в день обращения · Монтаж за 1 день</span>
+      <span class="font-data text-[11px] text-amber-600 dark:text-amber-400 uppercase tracking-wider font-bold">Инженерный замер пусковых токов · Монтаж в готовый электрощит</span>
     </div>
 
     <!-- Headline -->
     <div class="text-center max-w-4xl mb-7">
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-[var(--text-main)] mb-4 leading-tight font-display">
-        Полная энергонезависимость объекта. Без шума, бензина и переплат.
+        Надежное резервное электропитание объекта. Без шума, бензина и переплат.
       </h1>
       <p class="text-base sm:text-xl text-[var(--accent)] mb-3 font-semibold">
         Инженерный подбор оборудования под ваши реальные приборы и пусковые токи
@@ -291,7 +459,7 @@
       <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">verified</span> Замер пусковых токов клещами</span>
       <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">payments</span> Оплата 50/50 по акту после теста</span>
       <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">gavel</span> Договор с ИП Орлов Д.В.</span>
-      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">volume_off</span> 0 дБ шума · 0 л бензина</span>
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[var(--accent)] text-[16px]">battery_charging_full</span> LiFePO4 без выхлопа · 0 л бензина</span>
     </div>
 
     <!-- Status Log Bar -->
@@ -358,19 +526,19 @@
         <ul class="space-y-2.5 text-xs sm:text-sm text-[var(--text-main)]">
           <li class="flex items-start gap-2">
             <span class="material-symbols-outlined text-[var(--accent)] text-[16px] shrink-0 mt-0.5">check</span>
-            <span><strong>0 дБ шума:</strong> стоит прямо в торговом зале, офисе, аптеке или жилой комнате.</span>
+            <span><strong>Бесшумная работа батарейного блока:</strong> установка в котельной, прихожей, офисе или подсобном помещении.</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="material-symbols-outlined text-[var(--accent)] text-[16px] shrink-0 mt-0.5">check</span>
-            <span><strong>100% безопасность:</strong> без выхлопа, гари, дыма и пожароопасных канистр с бензином.</span>
+            <span><strong>Пожаробезопасные LiFePO4 аккумуляторы:</strong> без выхлопа, гари, дыма и пожароопасных канистр с бензином.</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="material-symbols-outlined text-[var(--accent)] text-[16px] shrink-0 mt-0.5">check</span>
-            <span><strong>Мгновенный ввод (0–10 мс):</strong> свет не моргает, кассы и сервера продолжают работать.</span>
+            <span><strong>Мгновенный ввод (4–10 мс):</strong> свет не моргает, кассы, котлы и серверы продолжают работать.</span>
           </li>
           <li class="flex items-start gap-2">
             <span class="material-symbols-outlined text-[var(--accent)] text-[16px] shrink-0 mt-0.5">check</span>
-            <span><strong>15+ лет службы (6000+ циклов):</strong> литий-железо-фосфатные аккумуляторы без затрат на ТО.</span>
+            <span><strong>Долговечные ячейки (6000+ циклов):</strong> литий-железо-фосфатные аккумуляторы с BMS-защитой.</span>
           </li>
         </ul>
       </div>
@@ -422,7 +590,7 @@
               <li class="flex justify-between"><span>Оборудование и монтаж под ключ:</span> <span class="text-[var(--text-main)]">Единовременная инвестиция</span></li>
               <li class="flex justify-between"><span>Затраты на топливо:</span> <span class="text-emerald-600 dark:text-emerald-400 font-bold">0 ₽</span></li>
               <li class="flex justify-between"><span>Регламентное ТО и расходники:</span> <span class="text-emerald-600 dark:text-emerald-400 font-bold">0 ₽</span></li>
-              <li class="flex justify-between"><span>Ресурс LiFePO4:</span> <span class="text-[var(--accent)] font-bold">6000+ циклов (15+ лет)</span></li>
+              <li class="flex justify-between"><span>Ресурс LiFePO4:</span> <span class="text-[var(--accent)] font-bold">6000+ циклов ячеек</span></li>
             </ul>
           </div>
           <div class="pt-4 mt-4 border-t border-primary/20 flex justify-between items-baseline">
@@ -472,7 +640,7 @@
       <div class="control-card p-5 rounded-lg flex flex-col justify-between">
         <div>
           <div class="w-8 h-8 rounded bg-primary text-white flex items-center justify-center font-bold text-xs mb-3 font-data">03</div>
-          <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">Монтаж в щит за 1 день</h4>
+          <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">Монтаж в готовый электрощит</h4>
           <p class="text-xs text-[var(--text-muted)] leading-relaxed">
             Установка инвертора, батареи LiFePO4 и щита АВР. Используем силовые медные кабели по ГОСТ с гидравлической опрессовкой.
           </p>
@@ -488,7 +656,7 @@
             Имитируем аварию сети, запускаем все ваши приборы под нагрузкой. Только после проверки подписываем акт и вы платите вторые 50%.
           </p>
         </div>
-        <span class="font-data text-[11px] text-emerald-600 dark:text-emerald-400 mt-3 block font-bold">✓ 100% защита заказчика</span>
+        <span class="font-data text-[11px] text-emerald-600 dark:text-emerald-400 mt-3 block font-bold">✓ Договор и оплата 50% после проверки</span>
       </div>
     </div>
   </section>
@@ -496,102 +664,135 @@
   <!-- Screen: Ready-Made Configurations (Hit Solutions) -->
   <section class="py-14 px-4 lg:px-8 max-w-screen-xl mx-auto" id="configurations">
     <div class="text-center max-w-3xl mx-auto mb-10">
-      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider font-bold">Популярные комплексы</span>
+      <span class="font-data text-xs text-[var(--accent)] uppercase tracking-wider font-bold">Сценарные решения</span>
       <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
         Проверенные конфигурации под ключ
       </h2>
       <p class="text-[var(--text-muted)] text-xs sm:text-sm mt-2">
-        Оборудование с гарантией до 36 месяцев, готовое к монтажу в любой электрощит
+        Оборудование с гарантией до 36 месяцев, готовое к монтажу в электрощит после обследования объекта
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Config 1: 4.2 kW / 5.12 kWh -->
+      <!-- Config 1: Резерв Жизнеобеспечения -->
       <div class="control-card p-6 rounded-lg flex flex-col justify-between border-2 border-primary/40 relative overflow-hidden">
         <div class="absolute top-3 right-3 bg-primary text-white font-data text-[10px] font-bold px-2 py-0.5 rounded uppercase">
           Хит для дома
         </div>
         <div>
-          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">1 фаза · 220V</span>
-          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Народный Резерв» 4.2 кВт</h3>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">1 фаза · 220V · 3–3.6 кВт</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Резерв Жизнеобеспечения»</h3>
           <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
-            Гибридный инвертор Sunways 4.2 кВт + LiFePO4 накопитель 5.12 кВт·ч. Чистый синус для котлов отопления, холодильников, освещения и Wi-Fi.
+            Гибридный инвертор Sunways / Deye 3.6 кВт + LiFePO4 накопитель 5.12 кВт·ч. Чистый синус для котлов отопления, циркуляционных насосов, холодильника, освещения, роутера и видеонаблюдения.
           </p>
           <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-6">
             <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
               <span class="text-[var(--text-muted)]">Ёмкость аккумулятора:</span>
-              <span class="font-bold">5.12 кВт·ч (100 А·ч)</span>
+              <span class="font-bold">5.12 кВт·ч (100 А·ч LiFePO4)</span>
             </div>
             <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
               <span class="text-[var(--text-muted)]">Время автономии:</span>
-              <span class="font-bold text-[var(--accent)]">12–24 часа</span>
+              <span class="font-bold text-[var(--accent)]">16–24 часа</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Ввод резерва:</span>
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">4–10 мс (без сбоя котла и ПК)</span>
             </div>
             <div class="flex justify-between py-1">
-              <span class="text-[var(--text-muted)]">Ввод резерва:</span>
-              <span class="font-bold text-emerald-600 dark:text-emerald-400">0–10 мс (без моргания)</span>
+              <span class="text-[var(--text-muted)]">Щитовая защита:</span>
+              <span class="font-bold">Байпас сети + УЗИП + DC/AC</span>
             </div>
           </div>
+          <a href="/rezervnoe-pitanie-doma/" class="text-[var(--accent)] font-bold text-xs underline block mb-4">Подробнее о комплексе для дома →</a>
         </div>
-        <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center bg-primary text-white py-2.5 rounded font-label text-xs uppercase font-bold hover:bg-primary-dark transition-colors flex items-center justify-center gap-1.5">
-          <span class="material-symbols-outlined text-[16px]">send</span> Запросить смету в TG
+        <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center bg-primary text-white py-2.5 rounded font-label text-xs uppercase font-bold hover:bg-primary-dark transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">send</span> Запросить расчет в TG
         </a>
       </div>
 
-      <!-- Config 2: 6.2 kW / 10.24 kWh -->
+      <!-- Config 2: Полный Комфорт -->
       <div class="control-card p-6 rounded-lg flex flex-col justify-between border border-[var(--border-color)] relative">
         <div>
-          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">1 фаза · 220V</span>
-          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Народный Резерв Плюс» 6.2 кВт</h3>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">1–3 фазы · 5–6 кВт / Pecron F5000</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Полный Комфорт»</h3>
           <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
-            Инвертор Sunways 6.2 кВт + 2x LiFePO4 модуля (10.24 кВт·ч). Для больших домов со скважинными насосами, кондиционерами, аптек и магазинов.
+            Инвертор Deye 5–6 кВт или силовая станция Pecron F5000 + LiFePO4 модули 10–15 кВт·ч. Бесшовное питание всего дома со скважинным насосом, септиком (ЛОС), холодильниками и бытовой техникой.
           </p>
-          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-6">
+          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-4">
             <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
               <span class="text-[var(--text-muted)]">Ёмкость аккумулятора:</span>
-              <span class="font-bold">10.24 кВт·ч (200 А·ч)</span>
+              <span class="font-bold">10.24–15.36 кВт·ч (200–300 А·ч)</span>
             </div>
             <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
               <span class="text-[var(--text-muted)]">Время автономии:</span>
-              <span class="font-bold text-[var(--accent)]">24–48 часов</span>
+              <span class="font-bold text-[var(--accent)]">12–20 часов (весь дом)</span>
             </div>
-            <div class="flex justify-between py-1">
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
               <span class="text-[var(--text-muted)]">Пусковой запас:</span>
               <span class="font-bold text-emerald-600 dark:text-emerald-400">до 12 кВт в пике</span>
             </div>
+            <div class="flex justify-between py-1">
+              <span class="text-[var(--text-muted)]">Управление:</span>
+              <span class="font-bold">Мониторинг через Wi-Fi/приложение</span>
+            </div>
           </div>
+          <a href="/rezervnoe-pitanie-doma/" class="text-[var(--accent)] font-bold text-xs underline block mb-4">Подробнее об инженерных решениях для дома →</a>
         </div>
         <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center control-card text-[var(--text-main)] py-2.5 rounded font-label text-xs uppercase font-bold hover:border-[var(--accent)] transition-colors flex items-center justify-center gap-1.5">
-          <span class="material-symbols-outlined text-[16px]">send</span> Запросить смету в TG
+          <span class="material-symbols-outlined text-[16px]">send</span> Запросить расчет в TG
         </a>
       </div>
 
-      <!-- Config 3: PECRON / Deye -->
+      <!-- Config 3: Автономия Макс -->
       <div class="control-card p-6 rounded-lg flex flex-col justify-between border border-[var(--border-color)] relative">
         <div>
-          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">3 фазы 380V / Мобильный</span>
-          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">PECRON & Deye Премиум</h3>
+          <span class="font-data text-xs text-[var(--accent)] font-bold uppercase">3 фазы 380V / 1 фаза 220V · 8–12 кВт</span>
+          <h3 class="text-lg font-bold text-[var(--text-main)] mt-1 mb-2 font-display">«Автономия Макс»</h3>
           <p class="text-xs text-[var(--text-muted)] leading-relaxed mb-4">
-            Мобильные силовые станции PECRON E3800 / F5000 и 3-фазные инверторы Deye (6–12 кВт) с высоковольтными АКБ до 30 кВт·ч.
+            Гибридный инвертор Deye 8–12 кВт + АКБ стойка 15–20 кВт·ч + модуль согласования с генератором заказчика (АВР). Бесшумная жизнь от АКБ с автозапуском генератора только на 2–3 ч для быстрой дозарядки.
           </p>
-          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-6">
+          <div class="space-y-1.5 text-xs text-[var(--text-main)] font-data mb-4">
             <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
               <span class="text-[var(--text-muted)]">Ёмкость батарей:</span>
-              <span class="font-bold">от 3.84 до 30.7 кВт·ч</span>
+              <span class="font-bold">15–20 кВт·ч LiFePO4</span>
             </div>
             <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
-              <span class="text-[var(--text-muted)]">Зарядка от сети/СЭС:</span>
-              <span class="font-bold text-[var(--accent)]">1.5–2.5 часа</span>
+              <span class="text-[var(--text-muted)]">Связка с генератором:</span>
+              <span class="font-bold text-[var(--accent)]">Автозапуск (топливо в 4–5 раз экономнее)</span>
+            </div>
+            <div class="flex justify-between py-1 border-b border-[var(--border-color)]">
+              <span class="text-[var(--text-muted)]">Время автономии:</span>
+              <span class="font-bold text-emerald-600 dark:text-emerald-400">Суточное с автодозарядом от ДГУ/СЭС</span>
             </div>
             <div class="flex justify-between py-1">
               <span class="text-[var(--text-muted)]">Назначение:</span>
-              <span class="font-bold">Коттеджи от 250 м², HoReCa, клиники</span>
+              <span class="font-bold">Коттеджи от 250 м², усадьбы, HoReCa, бизнес</span>
             </div>
           </div>
+          <a href="/rezervnoe-pitanie-dlya-biznesa/" class="text-[var(--accent)] font-bold text-xs underline block mb-4">Подробнее о решениях для бизнеса →</a>
         </div>
         <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="w-full text-center control-card text-[var(--text-main)] py-2.5 rounded font-label text-xs uppercase font-bold hover:border-[var(--accent)] transition-colors flex items-center justify-center gap-1.5">
-          <span class="material-symbols-outlined text-[16px]">send</span> Запросить смету в TG
+          <span class="material-symbols-outlined text-[16px]">send</span> Запросить расчет в TG
         </a>
       </div>
+    </div>
+
+    <!-- Engineering Audit Callout -->
+    <div class="mt-8 p-6 rounded-lg bg-[var(--bg-elevated)] border border-[var(--border-color)] flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded bg-primary/10 text-[var(--accent)] flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-2xl">straighten</span>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-[var(--text-main)] font-display">Расчет без скрытых доплат строго по результатам замера</h4>
+          <p class="text-xs text-[var(--text-muted)] mt-1 max-w-2xl leading-relaxed">
+            Мы не навязываем избыточную мощность и не занижаем сечения проводников. Точный подбор инвертора, емкости батарей и типа щитовой защиты рассчитывается по результатам инженерного энергоаудита: замера реальных пусковых токов вашего оборудования токовыми клещами на объекте.
+          </p>
+        </div>
+      </div>
+      <a href="https://t.me/killa_xx" target="_blank" rel="noopener" class="whitespace-nowrap px-6 py-3 rounded bg-primary text-white font-label text-xs uppercase font-bold hover:bg-primary-dark transition-colors flex items-center gap-2 shadow-sm shrink-0">
+        <span class="material-symbols-outlined text-[18px]">electric_meter</span> Записаться на замер
+      </a>
     </div>
   </section>
 
@@ -661,7 +862,7 @@
         <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center mx-auto mb-4">
           <span class="material-symbols-outlined text-[28px]">shield</span>
         </div>
-        <span class="font-data text-xs text-emerald-500 font-bold uppercase tracking-wider">Гарантия без риска для заказчика</span>
+        <span class="font-data text-xs text-emerald-500 font-bold uppercase tracking-wider">Гарантия по официальному договору</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-[var(--text-main)] mt-1 font-display">
           Оплата вторых 50% только после проверки под нагрузкой
         </h2>
@@ -688,7 +889,7 @@
         <div class="p-4 rounded bg-[var(--bg-surface)] border border-[var(--border-color)]">
           <h4 class="font-bold text-sm text-[var(--text-main)] mb-1">3. Чистый синус для газовых котлов</h4>
           <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-            100% совместимость с любой чувствительной автоматикой отопления (Baxi, Vaillant, Protherm) без ошибок и риска повреждения плат.
+            Чистый синус 220 В: стабильная работа фазозависимой автоматики отопления (Baxi, Vaillant, Protherm) при корректном заземлении.
           </p>
         </div>
       </div>
@@ -814,7 +1015,7 @@
                 <span class="font-data font-bold text-[var(--accent)]" id="calcF5000Time">8.5 ч</span>
               </div>
               <div class="flex justify-between items-center text-xs p-2 rounded bg-primary/10 border border-primary/30">
-                <span class="font-bold text-[var(--text-main)]">«Народный резерв» (5.12 кВт·ч):</span>
+                <span class="font-bold text-[var(--text-main)]">«Резерв Жизнеобеспечения» (5.12 кВт·ч):</span>
                 <span class="font-data font-extrabold text-[var(--accent)] text-sm" id="calcRezervTime">9.2 ч</span>
               </div>
               <div class="flex justify-between items-center text-xs py-1">
@@ -893,7 +1094,7 @@
           <span class="material-symbols-outlined text-[var(--accent)] faq-icon text-[18px]">expand_more</span>
         </button>
         <div class="px-5 pb-5 text-xs text-[var(--text-muted)] leading-relaxed faq-content hidden">
-          Да, абсолютно. В отличие от бензогенераторов, аккумуляторы LiFePO4 не выделяют газов, не имеют запаха, работают бесшумно и полностью разрешены для установки в жилых помещениях.
+          Да. В отличие от бензогенераторов, герметичные аккумуляторы LiFePO4 с BMS не выделяют выхлопных газов, не имеют запаха бензина и безопасны для установки в техническом помещении, котельной или коридоре при температуре выше 0°C.
         </div>
       </div>
     </div>
@@ -911,17 +1112,17 @@
           <span class="font-extrabold text-lg text-[var(--text-main)] tracking-wider font-display">РОБОСТОК</span>
         </div>
         <p class="text-xs text-[var(--text-muted)] leading-relaxed">
-          Инженерные решения автономного энергоснабжения, гибридных инверторов и зарядных станций под ключ. 0 дБ шума, 0 л бензина, 100% защита от аварий в сети.
+          Инженерные решения автономного энергоснабжения, гибридных инверторов и резервного питания под ключ. 0 л бензина для батарейного контура, оплата 50% после теста под нагрузкой.
         </p>
       </div>
 
       <div>
-        <h4 class="text-xs font-bold text-[var(--text-main)] font-display mb-3 uppercase tracking-wider">Оборудование</h4>
+        <h4 class="text-xs font-bold text-[var(--text-main)] font-display mb-3 uppercase tracking-wider">Услуги и решения</h4>
         <ul class="space-y-1.5 text-xs text-[var(--text-muted)]">
-          <li>Комплексы «Народный резерв» 6.2 кВт</li>
-          <li>Станции Pecron E3800 / PECRON F5000</li>
-          <li>Премиум-инверторы Deye (3 фазы 380V)</li>
-          <li>Солнечные электростанции под ключ</li>
+          <li><a href="/rezervnoe-pitanie-doma/" class="hover:underline text-[var(--accent)] font-semibold">Резервное питание дома</a></li>
+          <li><a href="/rezervnoe-pitanie-dlya-biznesa/" class="hover:underline text-[var(--accent)] font-semibold">Резервное питание для бизнеса</a></li>
+          <li><a href="/solnechnye-elektrostancii-pod-klyuch/" class="hover:underline text-[var(--accent)] font-semibold">Солнечные электростанции под ключ</a></li>
+          <li><a href="/presentation.html" class="hover:underline">Презентация оборудования</a></li>
         </ul>
       </div>
 
@@ -939,7 +1140,7 @@
     <div class="pt-6 border-t border-[var(--border-color)]/60 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-[var(--text-muted)] font-data">
       <div>© 2026 РОБОСТОК · Все права защищены</div>
       <div>
-        <a href="llm.txt" class="text-[var(--accent)] hover:underline">llm.txt for AI Agents</a> · 
+        <a href="/llms.txt" class="text-[var(--accent)] hover:underline">llms.txt for AI Agents</a> · 
         <a href="tel:+79856747574" data-config="phoneButtonFooter" class="hover:underline">Вызвать инженера: +7 985 674 75 74</a>
       </div>
     </div>
